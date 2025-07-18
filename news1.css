@@ -1,0 +1,432 @@
+body {
+  float: right;
+  padding-right: -23px;
+  -webkit-animation: puff-in-center 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  animation: puff-in-center 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+@-webkit-keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+ul{
+    margin-top: -16px;
+    padding: 8px;
+    list-style: none;
+    text-align: center;
+    z-index: 1;
+    margin-left: 3px;
+    color: white;
+}
+.navigation{
+  color: white;
+}
+ul li{
+    font-family: tahoma;
+    font-size: 15px;
+    float: left;
+    text-indent: -150px;
+    width: 331px;
+    height: 40px;
+    margin-right: 6px;
+    margin-left: -9px;
+    opacity: 0.9;
+    line-height: 40px;
+    font-style: 20px; 
+    background: #544f4d; 
+    background: -moz-linear-gradient(top, #544f4d 38%, #0a0e0a 78%, #0a0809 100%); 
+    background: -webkit-linear-gradient(top, #544f4d 38%,#0a0e0a 78%,#0a0809 100%);
+    border-radius: 8px;
+}
+ul .child{
+  display: none;
+  margin-top: -8px;
+  margin-left: -2px;
+}
+ul li a{
+  color: white;
+  text-decoration: none;
+  margin-left: 130px;
+}
+ul li a:hover{
+  color: #0dff2f;
+  text-shadow: -.25px -.25px 0 black, 
+                .25px .25px black;
+}
+ul li:hover{
+  cursor: pointer;
+  background: #f3c5bd; 
+  background: -moz-linear-gradient(top, #f3c5bd 0%, #e86c57 24%, #ea2803 39%, #ff6600 75%, #c72200 100%); 
+  background: -webkit-linear-gradient(top, #f3c5bd 0%,#e86c57 24%,#ea2803 39%,#ff6600 75%,#c72200 100%);
+  z-index: 999;
+}
+.child:hover ul li{
+  color: black;
+  margin-top: -15px;
+  margin-bottom: -8px;
+  background: #f3c5bd; 
+  background: -moz-linear-gradient(top, #f3c5bd 0%, #e86c57 24%, #ea2803 39%, #ff6600 75%, #c72200 100%); 
+  background: -webkit-linear-gradient(top, #f3c5bd 0%,#e86c57 24%,#ea2803 39%,#ff6600 75%,#c72200 100%);
+  z-index: 999;
+}
+
+.akik1{
+  margin-top: 0px;
+  position: absolute;
+  margin-bottom: -300px;
+  overflow: hidden;
+}
+.batu1{
+  background: url(power-stone.jpg);
+  width: 250px;
+  height: 90px;
+  margin-top: 60px;
+  margin-left: 30px;
+  animation-name: bottomFadeInOut;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.stone1{
+  margin-top: 50px;
+  margin-left: 330px; 
+  animation-name: topFadeInOut;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  position: absolute;
+  overflow: hidden;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 20;
+  }
+}
+
+svg {
+  width: 1700px;
+  height: 550px;
+  z-index: -99;
+  margin-left: -460px;
+  margin-top: -140px;
+  position: absolute;
+  margin-bottom: -400px;
+}
+
+.box1{
+  stroke: #ff00e4;
+  stroke-width: 0.1px;
+  stroke-dasharray: 1450;
+  stroke-dashoffset: 1450;
+  animation: dash 30s linear forwards;
+}
+
+.akik2{
+  margin-top: 100px;
+  position: absolute;
+  overflow: hidden;
+
+}
+.batu2{
+  background: url(space-stone.jpg);
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 90px;
+  margin-top: 10px;
+  margin-left: 30px;
+  animation-name: bottomFadeInOut;
+  animation-delay: 2s;
+  animation-duration: 3s;
+  position: relative;
+}
+
+.stone2{
+  margin-top: 50px;
+  margin-left: 330px; 
+  animation-name: topFadeInOut;
+  animation-delay: 2s;
+  animation-duration: 3s;
+  position: absolute;
+  overflow: hidden;
+  animation-fill-mode: forwards;
+}
+
+.box2{
+  stroke: #008aff;
+  stroke-width: 0.1px;
+  stroke-dasharray: 1450;
+  stroke-dashoffset: 1450;
+  animation: dash 40s linear forwards;
+}
+
+
+.akik3{
+  position: absolute;
+  margin-bottom: -150px;
+  overflow: hidden;
+}
+.batu3{
+  background: url(reality-stone.jpg);
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 90px;
+  margin-top: 10px;
+  margin-left: 30px;
+  animation-name: bottomFadeInOut;
+  animation-delay: 3s;
+  animation-duration: 3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.stone3{
+  margin-top: 250px;
+  margin-left: 330px; 
+  margin-bottom: -250px;
+  animation-name: topFadeInOut;
+  animation-delay: 3s;
+  animation-duration: 3s;
+  position: absolute;
+  overflow: hidden;
+  animation-fill-mode: forwards;
+}
+
+.box3{
+  margin-top: 265px;
+  stroke: #ff0000;
+  stroke-width: 0.1px;
+  stroke-dasharray: 1450;
+  stroke-dashoffset: 1450;
+  animation: dash 50s linear forwards;
+}
+
+
+.akik4{
+  position: absolute;
+  margin-top: 100px;
+  overflow: hidden;
+}
+.batu4{
+  background: url(mind-stone.jpg);
+  width: 290px;
+  height: 90px;
+  margin-top: 10px;
+  margin-left: 30px;
+  animation-name: bottomFadeInOut;
+  animation-delay: 4s;
+  animation-duration: 3s;
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.stone4{
+  margin-top: 250px;
+  margin-left: 330px; 
+  margin-bottom: -250px;
+  animation-name: topFadeInOut;
+  animation-delay: 4s;
+  animation-duration: 3s;
+  position: absolute;
+  overflow: hidden;
+  animation-fill-mode: forwards;
+}
+
+.box4{
+  margin-top: 265px;
+  stroke: #e0d300;
+  stroke-width: 0.1px;
+  stroke-dasharray: 1450;
+  stroke-dashoffset: 1450;
+  animation: dash 60s linear forwards;
+}
+
+
+.akik5{
+  position: absolute;
+  margin-top: 200px;
+  margin-bottom: -150px;
+  overflow: hidden;
+}
+.batu5{
+  background: url(time-stone.jpg);
+  width: 250px;
+  height: 90px;
+  margin-top: 10px;
+  margin-left: 30px;
+  animation-name: bottomFadeInOut;
+  animation-delay: 5s;
+  animation-duration: 3s;
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.stone5{
+  margin-top: 250px;
+  margin-left: 330px; 
+  margin-bottom: -250px;
+  animation-name: topFadeInOut;
+  animation-delay: 5s;
+  animation-duration: 3s;
+  position: absolute;
+  overflow: hidden;
+  animation-fill-mode: forwards;
+}
+
+.box5{
+  margin-top: 265px;
+  stroke: #ff3c00;
+  stroke-width: 0.1px;
+  stroke-dasharray: 1450;
+  stroke-dashoffset: 1450;
+  animation: dash 70s linear forwards;
+}
+
+
+.akik6{
+  position: absolute;
+  margin-top: 300px;
+  margin-bottom: -150px;
+  overflow: hidden;
+}
+.batu6{
+  background: url(soul-stone.jpg);
+  width: 250px;
+  height: 90px;
+  margin-top: 10px;
+  margin-left: 30px;
+  animation-name: bottomFadeInOut;
+  animation-delay: 6s;
+  animation-duration: 3s;
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.stone6{
+  margin-top: 250px;
+  margin-left: 330px; 
+  margin-bottom: -250px;
+  animation-name: topFadeInOut;
+  animation-delay: 6s;
+  animation-duration: 3s;
+  position: absolute;
+  overflow: hidden;
+  animation-fill-mode: forwards;
+}
+
+.box6{
+  margin-top: 265px;
+  stroke: #ff00e4;
+  stroke-width: 0.1px;
+  stroke-dasharray: 1450;
+  stroke-dashoffset: 1450;
+  animation: dash 80s linear forwards;
+}
+
+@keyframes bottomFadeInOut {
+  0% {
+    bottom: -100px;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 0px;
+    position: relative;
+  overflow: visible;
+  }
+}
+
+@keyframes topFadeInOut {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0px;
+    position: relative;
+  overflow: visible;
+  }
+}
+
+.background{
+  background: url(gauntlet.jpg);
+  background-repeat: no-repeat;
+  width: 1345px;
+  height: 759px;
+  z-index: -9999;
+  position: absolute;
+  opacity: 0.1;
+  margin-top: -720px;
+  margin-left: -7px;
+}
+/*-------- Footer---------*/
+
+
+.footer{
+    font-family: tahoma;
+    width: 99%;
+    margin-top: 20px;
+    margin-bottom: -100px;
+    background-color: #d5d5d5;
+    padding: 20px;
+    border-top: 3px solid #9f9f9f;
+    border-bottom: 3px solid #9f9f9f;
+    height: 0px;
+    font-size: 1vw;
+    margin-left: -19px;
+    position: absolute;
+}
+
+.container1 {
+    display: inline-block;
+    float: left; 
+    margin-top: -10px;
+    margin-left: 25px;
+
+}
+
+.container2{
+    display: inline-block;
+    margin-top: -10px;
+    margin-right: -10px;
+    float: right;
+}
+
+/*---- responsive-----*/
+

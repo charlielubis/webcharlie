@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Charlie</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Antic+Slab&family=Dosis:wght@200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+VN+Guides&display=swap" rel="stylesheet">
+
+	</head>
+	<body>
+
+<!-----Menu Nav------->  
+<ul class="menu-bar">
+    <li>Home</li>
+    <li>Characters
+      <ul class="dropdown">
+        <li>Iron Man</li>
+        <li>Captain America</li>
+        <li>Thor</li>
+      </ul>
+    </li>
+    <li>Gallery
+      <ul class="dropdown">
+        <li>Avengers</li>
+        <li>X-Men</li>
+        <li>Fantastic Four</li>
+      </ul>
+    </li>
+    <li>Buy
+    <ul class="dropdown">
+        <li>Toy</li>
+        <li>Comic</li>
+      </ul>
+      </li>
+  </ul>
+
+<!-----Slider Carousel------->
+
+ <div class="container">
+    <div class="wrapper">
+  
+      <ul id="sb-slider" class="sb-slider">
+        <li>
+          <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank"><img src="carousel1.jpg" alt="image1"/></a>
+          <div class="sb-description">
+            <h3>Iron Man</h3>
+          </div>
+        </li>
+        <li>
+          <a href="http://www.flickr.com/photos/strupler/2968268187" target="_blank"><img src="carousel2.jpg" alt="image2"/></a>
+          <div class="sb-description">
+            <h3>Captain America</h3>
+          </div>
+        </li>
+        <li>
+          <a href="http://www.flickr.com/photos/strupler/2968114825" target="_blank"><img src="carousel3.jpg" alt="image1"/></a>
+          <div class="sb-description">
+            <h3>Thor</h3>
+          </div>
+        </li>
+        <li>
+          <a href="http://www.flickr.com/photos/strupler/2968122059" target="_blank"><img src="carousel4.jpg" alt="image1"/></a>
+          <div class="sb-description">
+            <h3>Hulk</h3>
+          </div>
+        </li>
+        <li>
+          <a href="http://www.flickr.com/photos/strupler/2969119944" target="_blank"><img src="carousel5.jpg" alt="image1"/></a>
+          <div class="sb-description">
+            <h3>Captain Marvel</h3>
+          </div>
+        </li>
+        <li>
+          <a href="http://www.flickr.com/photos/strupler/2968126177" target="_blank"><img src="carousel6.jpg" alt="image1"/></a>
+          <div class="sb-description">
+            <h3>Doctor Strange</h3>
+          </div>
+        </li>
+        <li>
+          <a href="http://www.flickr.com/photos/strupler/2968945158" target="_blank"><img src="carousel7.jpg" alt="image1"/></a>
+          <div class="sb-description">
+            <h3>Spiderman</h3>
+          </div>
+        </li>
+      </ul>
+  
+      <div id="shadow" class="shadow"></div>
+      
+      <div id="nav-arrows" class="nav-arrows" src="arrow1.png">
+        <a href="#">Next</a>
+        <a href="#">Previous</a>
+      </div>
+      
+    </div>
+  </div>
+
+	<!-----Card Container------->
+
+	<div class="card-container">
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="widow"></div>
+        </div>
+        <div class="card-back">
+          <p class="bleck">Namanya Natasha Romanoff merupakan agen/mata-mata dari Rusia yang jago beladiri dan dilengkapi dengan teknologi yang tinggi. Black Widow diajak Nick Fury bergabung dengan S.H.I.E.L.D. untuk menyatukan para jagoan ke dalam tim Avengers.<br></br>Black Widow ditingkatkan oleh bio-teknologi hingga tubuhnya tahan pada penyakit dan memiliki kecerdasan, tangkas dan lincah. </p>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="hulk"></div>
+        </div>
+        <div class="card-back">
+          <p class="bruce">Namanya adalah Bruce Banner yang merupakan ilmuwan dengan kecerdasan yang sangat tinggi. Eksperimen Bruce Banner terhadap sinar gamma-ray secara tak sengaja mengenai dirinya, hingga terjadi keanehan di dalam tubuhnya.<br></br>Akibatnya, Bruce Banner bisa berubah menjadi raksasa berwarna hijau, jika dia sedang emosi. Hulk memiliki power yang tak terbatas dan bisa menghancurkan apa aja, dia juga bisa menyembuhkan diri dari lukanya.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="scarlet"></div>
+        </div>
+        <div class="card-back">
+          <p class="witch">Namanya adalah Wanda Maximoff yang lahir dari istri Magneto melarikan diri saat hamil besar, hingga melahirkan anak kembar yaitu Wanda dan Pietro. Scarlet Witch mempunyai kekuatan sihir yang bisa memanipulasi ingatan seseorang, dan kekuatan sihir yang menghancurkan lawannya.<br></br>Adik Scarlet Witch menjadi Quicksilver yang mempunyai kecepatan luar biasa dan mereka berdua hidupnya agak berantakan. Scarlet Witch berpacaran dengan Vision</p>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="visien"></div>
+        </div>
+        <div class="card-back">
+          <p class="vision">Robot Ultron yang menciptakan Vision yaitu sejenis Android untuk melawan Dr. Hank Pym  dan the Avengers. Sempat menjadi anak buah Ultron, Vision akhirnya melawan balik Ultron berkat bantuan the Avengers. Vision akhirnya sadar dan dia mengendalikan seluruh komputer di dunia<br></br>Dahi Vision terdapat batu infinity yang sangat berbahaya. Vision mempunyai indra manusia super, refleks, kecepatan, kemampuan analisis super dll. Vision menikah dengan Scarlet Witch.</p>
+        </div>
+      </div>
+    </div>
+	<div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="antmen"></div>
+        </div>
+        <div class="card-back">
+          <p class="antman">Ant-Man ini merupakan proyek dari seorang ilmuwan yg bernama Hank Pym yang menemukan zat yg bisa mengubah ukuran apapun. Lalu ada seorang pencuri yang bernama Scott Lang yang terpilih menjadi percobaan memakai kostum Ant-Man. <br></br> Scott Lang akhirnya ditahbiskan sebagai Ant-Man yang baru menggantikan Hank Pyn yang nantinya akan berpasangan dengan putrinya Hank Pym yang memakai kostum Wasp. Mereka berdua selain bisa berubah menjadi ukuran kecil, juga bisa berubah menjadi sangat besar </p>
+        </div>
+      </div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="falcen"></div>
+        </div>
+        <div class="card-back">
+          <p class="falcon">Sam Wilson merupakan seorang anak dari pendeta yang menyukai burung sejak kecil. Ketika kedua orang tuanya terbunuh, Sam Wilson bekerja menjadi relawan. Ketika bekerja di pulau Exile, Sam Wilson bertemu dengan idolanya yaitu Captain America.<br></br>Mereka berdua bekerjasama untuk memberantas kejahatan, hingga akhirnya Black Panther membantunya membuat kostum yang bisa membuatnya bisa terbang. Red Skull selalu berencana membunuh Falcon dan Captain America.</p>
+        </div>
+      </div>
+    </div>
+	<div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="hawkeyes"></div>
+        </div>
+        <div class="card-back">
+          <p class="hawkeye">Clint Barton muda ditinggal orang tuanya karena kecelakaan, hingga akhirnya dirawat di panti asuhan. Clint Barton mempunyai keahlian memanah dan bekerja di sirkus yg akhirnya dijuluki Hawkeye.<br></br>Clint Barton melihat Iron Man yang membuatnya ingin menjadi pahlawan, dan secara tidak sengaja bertemu dengan agen Rusia yg bernama Black Widow. Clint Barton menyelamatkan ibunya Jarvis dari pencuri, dan sebagai bentuk terima kasih Jarvis mengajak Clint Barton bergabung dengan Avengers, lalu Tony Stark yg membuat kostum serta senjatanya </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-----Majalah------->
+  <div class="book">
+  <div class="page">
+    <div class="front cover">
+      <p>Click</p>
+    </div>
+    <div class="back">
+      <img src="majalah1.jpg" alt="Img 1">
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="front">
+      <img src="majalah2.jpg" alt="Img 2">
+    </div>
+    <div class="back">
+      <img src="majalah3.jpg" alt="Img 3">
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="front">
+      <img src="majalah4.jpg" alt="Img 4">
+    </div>
+    <div class="back">
+      <img src="majalah5.jpg" alt="Img 5">
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="front">
+      <img src="majalah6.jpg" alt="Img 6">
+    </div>
+    <div class="back">
+      <img src="majalah7.jpg" alt="Img 7">
+    </div>
+  </div>
+  
+  <div class="page">
+    <div class="front">
+      <img src="majalah8.jpg" alt="Img 8">
+    </div>
+    <div class="back">
+      <img src="majalah9.jpg" alt="Img 9">
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="front">
+      <img src="majalah0.jpg" alt="Img 0">
+    </div>
+    <div class="back cover">
+    </div>
+  </div>
+</div>
+
+<!--- Footer -->
+<div style="height: 400px;"> </div>
+    <div class="spectacledcoder-footer">
+        <div class="spectacledcoder-footer-top">
+    
+        </div>
+        <div class="spectacledcoder-footer-content">
+            <div class="spectacledcoder-footer-section">
+                <ul class="d-footer-ul">
+                    <li class="d-footer-li-h"><b>Links</b></li>
+                    <li class="d-footer-li">Home</li>
+                    <li class="d-footer-li">About</li>
+                    <li class="d-footer-li">Blog</li>
+                    <li class="d-footer-li">Design</li>
+                    <li class="d-footer-li">Documentation</li>
+                </ul>
+            </div>
+            <div class="spectacledcoder-footer-section">
+                <ul class="d-footer-ul">
+                    <li class="d-footer-li-h"><b>Blog</b></li>
+                    <li class="d-footer-li">UI / UX</li>
+                    <li class="d-footer-li">Wordpress</li>
+                    <li class="d-footer-li">Friendster</li>
+                    <li class="d-footer-li">MySpace</li>
+                    <li class="d-footer-li">BBM</li>
+                </ul>
+            </div>
+            <div class="spectacledcoder-footer-section">
+                <ul class="d-footer-ul">
+                    <li class="d-footer-li-h"><b>Privacy policy</b></li>
+                    <li class="d-footer-li-h"><b>Contact Us</b></li>
+                    
+                </ul>
+            </div>
+            <div class="spectacledcoder-footer-section">
+                <div class="logo-head">
+                    <b>Follow me on</b>
+                </div>
+                <div class="logo">
+                   <a href="https://static.vecteezy.com/system/resources/previews/016/639/983/original/instagram-3d-icon-free-png.png" target="_blank"><img width="30" height="30" src="https://cdn3d.iconscout.com/3d/free/thumb/free-instagram-3d-icon-download-in-png-blend-fbx-gltf-file-formats--logo-social-media-app-pack-logos-icons-8250237.png?f=webp" alt="instagram-new"/></a>
+                   <a href="https://www.youtube.com/channel/UCooCOD2j8Q4Y9ysYZIFzI_w" target="_blank"><img width="30" height="30" src="https://static.vecteezy.com/system/resources/previews/009/673/697/original/glossy-facebook-3d-render-icon-free-png.png" alt="youtube-squared"/></a>
+                    <a href="https://dribbble.com/dark-soul" target="_blank"><img width="25" height="25" src="https://static.vecteezy.com/system/resources/previews/022/488/752/original/3d-youtube-logo-icon-isolated-on-transparent-background-free-png.png" alt="dribbble"/></a>
+                </div>    
+            </div>
+        </div>
+        <div class="spectacledcoder-footer-bottom">
+            <div class="spectacledcoder-footer-bottom-sec">
+                <p>Website by <a href="https://icons8.com/" target="_blank">Charlie</a></p>
+            </div>
+            <div class="spectacledcoder-footer-bottom-sec">
+                <p>Designed & Created by Charlie</p>
+            </div>
+            <div class="spectacledcoder-footer-bottom-sec">
+                <p>&copy; 2020 Charlie Production</p>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://tympanus.net/Development/Slicebox/js/jquery.slicebox.js"></script>
+
+  <script>
+  function flipCard(cardElement) {
+  cardElement.classList.toggle('flipped');
+}
+
+  </script>
+
+<script>
+$(function() {
+
+				
+  var Page = (function() {
+    
+    var $navArrows = $( '#nav-arrows' ).hide(),
+        $shadow = $( '#shadow' ).hide(),
+        slicebox = $( '#sb-slider' ).slicebox( {
+          onReady : function() {
+            
+            $navArrows.show();
+            $shadow.show();
+            
+          },
+          orientation : 'r',
+          cuboidsRandom : true,
+          disperseFactor : 30
+        } ),
+        
+        init = function() {
+          
+          initEvents();
+          
+        },
+        initEvents = function() {
+          
+          // add navigation events
+          $navArrows.children( ':first' ).on( 'click', function() {
+            
+            slicebox.next();
+            return false;
+            
+          } );
+          
+          $navArrows.children( ':last' ).on( 'click', function() {
+            
+            slicebox.previous();
+            return false;
+            
+          } );
+          
+        };
+    
+    return { init : init };
+    
+  })();
+  
+  Page.init();
+  
+});
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const isMobile = window.innerWidth <= 666;
+
+    if (isMobile) {
+      const items = document.querySelectorAll(".menu-bar > li");
+
+      items.forEach((item) => {
+        const submenu = item.querySelector(".sub-menu");
+
+        if (submenu) {
+          item.addEventListener("click", (e) => {
+            e.stopPropagation(); // prevent bubbling to document
+            const isOpen = submenu.classList.contains("open");
+
+            // Close all other submenus
+            document.querySelectorAll(".sub-menu").forEach(menu => {
+              menu.style.display = "none";
+              menu.classList.remove("open");
+            });
+
+            // Toggle this one
+            if (!isOpen) {
+              submenu.style.display = "block";
+              submenu.classList.add("open");
+            }
+          });
+        }
+      });
+
+      // Delay click outside handler slightly to avoid immediate close
+      document.addEventListener("click", () => {
+        setTimeout(() => {
+          document.querySelectorAll(".sub-menu").forEach(menu => {
+            menu.style.display = "none";
+            menu.classList.remove("open");
+          });
+        }, 50);
+      });
+    }
+  });
+</script>
+
+
+<script>
+const flipBook = (elBook) => {
+  elBook.style.setProperty("--c", 0); // Set current page
+  elBook.querySelectorAll(".page").forEach((page, idx) => {
+    page.style.setProperty("--i", idx);
+    page.addEventListener("click", (evt) => {
+      if (evt.target.closest("a")) return;
+      const curr = evt.target.closest(".back") ? idx : idx + 1;
+      elBook.style.setProperty("--c", curr);
+    });
+  });
+};
+
+document.querySelectorAll(".book").forEach(flipBook);
+</script>
+
+	</body>
+</html>	

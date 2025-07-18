@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Charlie Charles</title>
+<link rel="stylesheet" type="text/css" href="buy2.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<script src="jquery-3.3.1.min.js"></script>
+<script src="jquerytypewriter.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+  $(function(){
+    $('ul.parent > li').hover(function(){
+      $(this).find('ul.child').show(300);
+    }, function() {
+      $(this).find('ul.child').hide(300);
+    });
+  });
+ 
+$(document).ready(function(){
+    $('#film').on('change', function() {
+      if ( this.value == 'TonyStark')
+      {
+        $('#ironman').show();
+      } else {
+        $('#ironman').hide();
+        $("#gambar1, .iron1").hide();
+        $("#gambar2, .iron2").hide();
+        $("#gambar3, .iron3").hide();
+      }
+
+       if ( this.value == 'SteveRogers')
+      {
+        $('#captainamerica').show();
+      } else {
+        $('#captainamerica').hide();
+        $("#gambar4, .capt1").hide();
+        $("#gambar5, .capt2").hide();
+        $("#gambar6, .capt3").hide();
+      }
+
+        if ( this.value == 'DonaldBlake')
+      {
+        $("#thor").show();
+      } else {
+        $("#thor").hide();
+        $("#gambar7, .petir1").hide();
+        $("#gambar8, .petir2").hide();
+        $("#gambar9, .petir3").hide();
+      }
+
+    if ( this.value == 'PeterParker')
+      {
+        $("#spiderman").show();
+      } else {
+        $("#spiderman").hide();
+        $("#gambar10, .jaring1").hide();
+        $("#gambar11, .jaring2").hide();
+      }
+
+    if ( this.value == 'ScottLang')
+      {
+        $("#antman").show();
+      } else {
+        $("#antman").hide();
+        $("#gambar12, .kecilbesar1").hide();
+        $("#gambar13, .kecilbesar2").hide();
+      }  
+
+    if ( this.value == 'StarLord')
+      {
+        $("#guardianofgalaxy").show();
+      } else {
+        $("#guardianofgalaxy").hide();
+        $("#gambar14, .galaksi1").hide();
+        $("#gambar15, .galaksi2").hide();
+      } 
+
+    if ( this.value == 'StephenStrange')
+      {
+        $("#gambar16, .penyihir").show();
+      } else {
+        $("#gambar16, .penyihir").hide();
+      }   
+    
+    if ( this.value == 'Tchalla')
+      {
+        $("#gambar17, .macan").show();
+      } else {
+        $("#gambar17, .macan").hide();
+      }
+
+    if ( this.value == 'CarolDanvers')
+      {
+        $("#gambar18, .cewekkuat").show();
+      } else {
+        $("#gambar18, .cewekkuat").hide();
+      }
+
+
+    if ( this.value == 'Avengers')
+      {
+        $("#theavengers").show();
+      } else {
+        $("#theavengers").hide();
+        $("#gambar19, .superhero1").hide();
+        $("#gambar20, .superhero2").hide();
+        $("#gambar21, .superhero3").hide();
+        $("#gambar22, .superhero4").hide();
+      } 
+    });
+});
+
+$(document).ready(function(){
+    $('#ironman').on('change', function() {
+      if ( this.value == 'manusiabesi1')
+      {
+        $("#gambar1, .iron1").show();
+      } else {
+        $("#gambar1, .iron1").hide();
+      } 
+
+      if ( this.value == 'manusiabesi2')
+      {
+        $("#gambar2, .iron2").show();
+      } else {
+        $("#gambar2, .iron2").hide();
+      }
+
+       if ( this.value == 'manusiabesi3')
+      {
+        $("#gambar3, .iron3").show();
+      } else {
+        $("#gambar3, .iron3").hide();
+      }
+   }); 
+});
+
+$(document).ready(function(){
+    $('#captainamerica').on('change', function() {
+      if ( this.value == 'kapten1')
+      {
+        $("#gambar4, .capt1").show();
+      } else {
+        $("#gambar4, .capt1").hide();
+      } 
+
+      if ( this.value == 'kapten2')
+      {
+        $("#gambar5, .capt2").show();
+      } else {
+        $("#gambar5, .capt2").hide();
+      }
+
+       if ( this.value == 'kapten3')
+      {
+        $("#gambar6, .capt3").show();
+      } else {
+        $("#gambar6, .capt3").hide();
+      }
+   });
+});
+
+$(document).ready(function(){
+    $('#thor').on('change', function() {
+      if ( this.value == 'dewa1')
+      {
+        $("#gambar7, .petir1").show();
+      } else {
+        $("#gambar7, .petir1").hide();
+      } 
+
+      if ( this.value == 'dewa2')
+      {
+        $("#gambar8, .petir2").show();
+      } else {
+        $("#gambar8, .petir2").hide();
+      }
+
+       if ( this.value == 'dewa3')
+      {
+        $("#gambar9, .petir3").show();
+      } else {
+        $("#gambar9, .petir3").hide();
+      }
+   });
+});
+
+$(document).ready(function(){
+    $('#spiderman').on('change', function() {
+      if ( this.value == 'labalaba1')
+      {
+        $("#gambar10, .jaring1").show();
+      } else {
+        $("#gambar10, .jaring1").hide();
+      } 
+
+      if ( this.value == 'labalaba2')
+      {
+        $("#gambar11, .jaring2").show();
+      } else {
+        $("#gambar11, .jaring2").hide();
+      }
+   });
+});
+
+$(document).ready(function(){
+    $('#antman').on('change', function() {
+      if ( this.value == 'semut1')
+      {
+        $("#gambar12, .kecilbesar1").show();
+      } else {
+        $("#gambar12, .kecilbesar1").hide();
+      } 
+
+      if ( this.value == 'semut2')
+      {
+        $("#gambar13, .kecilbesar2").show();
+      } else {
+        $("#gambar13, .kecilbesar2").hide();
+      }
+   });
+});
+
+$(document).ready(function(){
+    $('#guardianofgalaxy').on('change', function() {
+      if ( this.value == 'planet1')
+      {
+        $("#gambar14, .galaksi1").show();
+      } else {
+        $("#gambar14, .galaksi1").hide();
+      } 
+
+      if ( this.value == 'planet2')
+      {
+        $("#gambar15, .galaksi2").show();
+      } else {
+        $("#gambar15, .galaksi2").hide();
+      }
+   });
+});
+
+$(document).ready(function(){
+    $('#theavengers').on('change', function() {
+      if ( this.value == 'tim1')
+      {
+        $("#gambar19, .superhero1").show();
+      } else {
+        $("#gambar19, .superhero1").hide();
+      } 
+      
+       if ( this.value == 'tim2')
+      {
+        $("#gambar20, .superhero2").show();
+      } else {
+        $("#gambar20, .superhero2").hide();
+      } 
+
+       if ( this.value == 'tim3')
+      {
+        $("#gambar21, .superhero3").show();
+      } else {
+        $("#gambar21, .superhero3").hide();
+      } 
+      
+       if ( this.value == 'tim4')
+      {
+        $("#gambar22, .superhero4").show();
+      } else {
+        $("#gambar22, .superhero4").hide();
+      } 
+   });
+});
+  </script>
+
+
+        <div class="navigation">
+         <div class="item">
+         <ul class="parent">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Characters</a>
+               <ul class="child">
+                   <li><a href="index4.html">Iron Man</a></li>
+                   <li><a href="index5.html">Thor</a></li>
+                   <li><a href="index3.html">Captain America</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Gallery</a>
+               <ul class="child">
+                   <li><a href="gallery1.html">Avengers</a></li>
+                   <li><a href="gallery2.html">X-Men</a></li>
+                   <li><a href="hgallery3.html">Fantastic Four</a></li>
+               </ul>
+            </li>
+            <li><a href="#">Buy</a>
+               <ul class="child">
+                   <li><a href="buy1.html">Toy</a></li>
+                   <li><a href="#">DVD</a></li>
+               </ul>
+            </li>
+         </ul>   
+       </div>
+     </div>
+   </div>
+
+
+<div class="border"></div>
+
+<select id="film">
+  <option value="pilihan">Pilih Judul Film...</option>
+  <option value="TonyStark">Iron Man</option>
+  <option value="SteveRogers">Captain America</option>
+  <option value="DonaldBlake">Thor</option>
+  <option value="PeterParker">Spider Man</option>
+  <option value="ScottLang">Ant Man</option>
+  <option value="StarLord">Guardian of Galaxy</option>
+  <option value="StephenStrange">Doctor Strange</option>
+  <option value="Tchalla">Black Panther</option>
+  <option value="CarolDanvers">Captain Marvel</option>
+  <option value="Avengers">The Avengers</option>
+</select>
+
+<select id="ironman">
+ <option value="pilihan">Judul Seri...</option>
+  <option value="manusiabesi1">Iron Man</option>
+  <option value="manusiabesi2">Iron Man 2</option>
+  <option value="manusiabesi3">Iron Man 3</option>
+</select>
+
+<select id="captainamerica">
+ <option value="pilihan">Judul Seri...</option>
+  <option value="kapten1">First Avengers</option>
+  <option value="kapten2">Winter Soldier</option>
+  <option value="kapten3">Civil War</option>
+</select>
+
+<select id="thor">
+ <option value="pilihan">Judul Seri...</option>
+  <option value="dewa1">Thor</option>
+  <option value="dewa2">The Dark World</option>
+  <option value="dewa3">Ragnarok</option>
+</select>
+
+<select id="spiderman">
+ <option value="pilihan">Judul Seri...</option>
+  <option value="labalaba1">Homecoming</option>
+  <option value="labalaba2">Far for Home</option>
+</select>
+
+<select id="antman">
+ <option value="pilihan">Judul Seri...</option>
+  <option value="semut1">Ant-Man</option>
+  <option value="semut2">Ant-Man and the Wasp</option>
+</select>
+
+<select id="guardianofgalaxy">
+ <option value="pilihan">Judul Seri...</option>
+  <option value="planet1">Vol. 1</option>
+  <option value="planet2">Vol. 2</option>
+</select>
+
+<select id="theavengers">
+  <option value="pilihan">Judul Seri...</option>
+  <option value="tim1">The Avengers</option>
+  <option value="tim2">Age of Ultron</option>
+  <option value="tim3">Infinity War</option>
+  <option value="tim4">Endgame</option>
+</select>
+
+<div class="background"></div>
+
+<div id="gambar1"></div>
+<span class="iron1">1. Robert Downey Jr. sebagai Tony Stark (Iron Man)<br> 2. Gwyneth Paltrow sebagai Pepper Potts<br>3. Terrence Howard sebagai Letkol James "Rhodey" Rhodes<br>4. Mickey Rourke sebagai Ivan Vanko (robot Ten Rings)<br>5. Shaun Toub sebagai Yinsen<br>6. Faran Tahir sebagai Raza<br>7. Clark Gregg sebagai Phil Coulson<br>8. Jon Favreau sebagai Happy Hogan<br> 9. Leslie Bibb sebagai Christine Everhart (wartawan)<br> 10. Paul Bettany pengisi suara J.A.R.V.I.S.<br> 11. Samuel L. Jackson sebagai Nick Fury<br></br> Durasi 126 menit & keuntungan 585.200.000 US Dollar.</span>
+
+<div id="gambar2"></div>
+<span class="iron2">1. Robert Downey Jr. sebagai Tony Stark (Iron Man)<br> 2. Gwyneth Paltrow sebagai Pepper Potts<br>3. Don Cheadle sebagai Letkol James "Rhodey" Rhodes (War Machine)<br>4. Mickey Rourke sebagai Ivan Vanko (robot Crimson Dynamo)<br>5. Scarlett Johansson sebagai Natasha Romanoff (Black Widow)<br>6. Sam Rockwell sebagai Justin Hammer<br>7. Clark Gregg sebagai Phil Coulson<br>8. Jon Favreau sebagai Happy Hogan<br> 9. Leslie Bibb sebagai Christine Everhart (wartawan)<br> 10. Paul Bettany pengisi suara J.A.R.V.I.S.<br> 11. Samuel L. Jackson sebagai Nick Fury<br></br> Durasi 125 menit & keuntungan 623.900.000 US Dollar.</span>
+
+<div id="gambar3"></div>
+<span class="iron3">1. Robert Downey Jr. sebagai Tony Stark (Iron Man)<br> 2. Gwyneth Paltrow sebagai Pepper Potts<br>3. Don Cheadle sebagai Letkol James "Rhodey" Rhodes (Iron Patriot)<br>4. Guy Pearce sebagai Aldrich Killian (Prometheus)<br>5. Rebecca Hall sebagai Maya Hansen<br>6. Stéphanie Szostak sebagai Brandt<br>7. James Badge Dale sebagai Savin<br>8. Jon Favreau sebagai Happy Hogan<br> 9. Ben Kingsley sebagai Trevor Slattery<br> 10. Paul Bettany pengisi suara J.A.R.V.I.S.<br> 11. Ty Simpkins sebagai Harley Keener<br></br> Durasi 131 menit & keuntungan 1.215.000.000 US Dollar.</span>
+
+<div id="gambar4"></div>
+<span class="capt1">1. Chris Evans sebagai Steve Rogers (Captain America)<br> 2. Hayley Atwell sebagai Peggy Carter<br>3. Sebastian Stan sebagai James Buchanan "Bucky" Barnes <br>4. Hugo Weaving sebagai Johann Schmidt (Red Skull)<br>5. Tommy Lee Jones sebagai Chester Phillips<br>6. Dominic Cooper sebagai Howard Stark<br>7. Neal McDonough sebagai Timothy "Dum Dum" Dugan<br>8. Derek Luke sebagai Gabe Jones<br> 9. Stanley Tucci  sebagai Abraham Erskine<br> 10. Samuel L. Jackson sebagai Nick Fury<br> 11. Kenneth Choi sebagai Jim Morita<br></br> Durasi 124 menit & keuntungan 370.600.000 US Dollar.</span>
+
+<div id="gambar5"></div>
+<span class="capt2">1. Chris Evans sebagai Steve Rogers (Captain America)<br> 2. Hayley Atwell sebagai Peggy Carter<br>3. Sebastian Stan sebagai James Buchanan "Bucky" Barnes <br>4. Scarlett Johansson sebagai Natasha Romanoff (Black Widow)<br>5. Samuel L. Jackson sebagai Nick Fury<br>6. Anthony Mackie sebagai Sam Wilson (Falcon)<br>7. Cobie Smulders sebagai Maria Hill<br>8. Emily VanCamp sebagai Sharon Carter<br> 9. Robert Redford  sebagai Alexander Pierce<br> 10. Georges St-Pierre sebagai Georges Batroc<br> 11. Callan Mulvey sebagai Jack Rollins<br></br> Durasi 136 menit & keuntungan 714.300.000 US Dollar.</span>
+
+<div id="gambar6"></div>
+<span class="capt3">1. Chris Evans sebagai Steve Rogers (Captain America)<br> 2. Robert Downey Jr. sebagai Tony Stark (Iron Man)<br>3. Sebastian Stan sebagai James Buchanan "Bucky" Barnes <br>4. Scarlett Johansson sebagai Natasha Romanoff (Black Widow)<br>5. Don Cheadle sebagai Letkol James "Rhodey" Rhodes (War Machine)<br>6. Anthony Mackie sebagai Sam Wilson (Falcon)<br>7. Jeremy Renner sebagai Clint Barton  (Hawkeye)<br>8. Chadwick Boseman sebagai T'Challa (Black Panther)<br> 9. Paul Bettany  sebagai Vision<br> 10. Elizabeth Olsen sebagai Wanda Maximoff (Scarlet Witch)<br> 11. Paul Rudd sebagai Scott Lang (Ant Man) <br>11. Tom Holland sebagai Peter Parker (Spider Man) <br>12. Frank Grillo sebagai  Brock Rumlow (Crossbones)<br>13. William Hurt sebagai Thaddeus "Thunderbolt" Ross<br>14. Daniel Brühl sebagai Helmut Zemo <br></br>Durasi 147 menit & keuntungan 1.153.000.000 US Dollar.</span>
+
+<div id="gambar7"></div>
+<span class="petir1">1. Chris Hemsworth sebagai Thor (Donald Blake)<br> 2. Natalie Portman sebagai Jane Foster<br>3. Tom Hiddleston sebagai Loki <br>4. Anthony Hopkins sebagai Odin<br>5. Stellan Skarsgård sebagai Erik Selvig<br>6. Kat Dennings sebagai Darcy Lewis<br>7. Colm Feore sebagai Laufey<br>8. Idris Elba sebagai Heimdall<br> 9. Rene Russo sebagai Frigga<br> 10. Clark Gregg sebagai Phil Coulson<br> 11. Ray Stevenson sebagai Volstagg<br> 12. Tadanobu Asano sebagai Hogun<br> 13. Josh Dallas sebagai Fandral<br> 14. Jaimie Alexander sebagai Sif<br></br> Durasi 114 menit & keuntungan 449.300.000 US Dollar.</span>
+
+<div id="gambar8"></div>
+<span class="petir2">1. Chris Hemsworth sebagai Thor (Donald Blake)<br> 2. Natalie Portman sebagai Jane Foster<br>3. Tom Hiddleston sebagai Loki <br>4. Anthony Hopkins sebagai Odin<br>5. Stellan Skarsgård sebagai Erik Selvig<br>6. Kat Dennings sebagai Darcy Lewis<br>7. Christopher Eccleston sebagai Malekith<br>8. Idris Elba sebagai Heimdall<br> 9. Rene Russo sebagai Frigga<br> 10. Adewale Akinnuoye-Agbaje sebagai Algrim (Kurse)<br> 11. Ray Stevenson sebagai Volstagg<br> 12. Tadanobu Asano sebagai Hogun<br> 13. Zachary Levi sebagai Fandral<br> 14. Jaimie Alexander sebagai Sif<br></br> Durasi 112 menit & keuntungan 644.600.000 US Dollar.</span>
+
+<div id="gambar9"></div>
+<span class="petir3">1. Chris Hemsworth sebagai Thor (Donald Blake)<br> 2. Mark Ruffalo sebagai Bruce Banner (Hulk)<br>3. Tom Hiddleston sebagai Loki <br>4. Anthony Hopkins sebagai Odin<br>5. Cate Blanchett sebagai Hela<br>6. Tessa Thompson sebagai Valkyrie (Scrapper 142)<br>7. Jeff Goldblum sebagai Grandmaster<br>8. Idris Elba sebagai Heimdall<br> 9. Karl Urban sebagai Skurge<br> 10. Benedict Cumberbatch sebagai Doctor Strange<br> 11. Ray Stevenson sebagai Volstagg<br> 12. Tadanobu Asano sebagai Hogun<br> 13. Zachary Levi sebagai Fandral<br> 14. Rachel House sebagai Topaz<br></br> Durasi 130 menit & keuntungan 854.000.000 US Dollar.</span>
+
+<div id="gambar10"></div>
+<span class="jaring1">1. Tom Holland sebagai Peter Parker (Spider-Man)<br> 2. Marisa Tomei sebagai May Parker<br>3. Zendaya sebagai Michelle "MJ" Jones <br>4. Jacob Batalon sebagai Ned<br>5. Michael Keaton sebagai Adrian Toomes (Vulture)<br>6. Laura Harrier sebagai Liz Toomes<br>7. Jon Favreau sebagai  Harold "Happy" Hogan<br>8. Robert Downey Jr. sebagai Tony Stark (Iron Man)<br> 9. Donald Glover sebagai Aaron Davis<br> 10. Tyne Daly sebagai Anne Marie Hoag<br> 11. Tony Revolori sebagai Eugene "Flash" Thompson<br> </br> Durasi 133 menit & keuntungan 880.200.000 US Dollar.</span>
+
+<div id="gambar11"></div>
+<span class="jaring2">1. Tom Holland sebagai Peter Parker (Spider-Man)<br> 2. Marisa Tomei sebagai May Parker<br>3. Zendaya sebagai Michelle "MJ" Jones <br>4. Jacob Batalon sebagai Ned<br>5. Michael Keaton sebagai Adrian Toomes (Vulture)<br>6. Jake Gyllenhaal sebagai Quentin Beck (Mysterio)<br>7. Jon Favreau sebagai  Harold "Happy" Hogan<br>8. Cobie Smulders sebagai Maria Hill<br> 9. Samuel L. Jackson sebagai Nick Fury<br> 10. J. B. Smoove sebagai Mr. Dell<br> 11. Angourie Rice sebagai Betty Brant<br></span>
+
+<div id="gambar12"></div>
+<span class="kecilbesar1">1. Paul Rudd sebagai Scott Lang (Ant-Man)<br> 2. Evangeline Lilly sebagai Hope van Dyne<br>3. Michael Douglas sebagai Hank Pym <br>4. Corey Stoll sebagai Darren Cross (Yellowjacket)<br>5. Michael Peña sebagai Luis<br>6. Bobby Cannavale sebagai Paxton<br>7. Tip "T.I." Harris sebagai Dave<br>8. Wood Harris sebagai Gale<br> 9. Judy Greer sebagai Maggie<br> 10. Bobby Cannavale sebagai Jim Paxton<br> 11. Abby Ryder Fortson sebagai Cassie<br></br> Durasi 117 menit & keuntungan 519.300.000 US Dollar.</span>
+
+<div id="gambar13"></div>
+<span class="kecilbesar2">1. Paul Rudd sebagai Scott Lang (Ant-Man)<br> 2. Evangeline Lilly sebagai Hope van Dyne (Wasp)<br>3. Michael Douglas sebagai Hank Pym <br>4. Walton Goggins sebagai Sonny Burch<br>5. Michael Peña sebagai Luis<br>6. Bobby Cannavale sebagai Jim Paxton<br>7. Hannah John-Kamen sebagai Ava Starr (Ghost)<br>8. Michelle Pfeiffer sebagai Janet van Dyne<br> 9. Judy Greer sebagai Maggie<br> 10. David Dastmalchian sebagai Kurt<br> 11. Abby Ryder Fortson sebagai Cassie<br>12. Randall Park sebagai Jimmy Woo<br>13. Laurence Fishburne sebagai Bill Foster<br></br> Durasi 118 menit & keuntungan 622.700.000 US Dollar.</span>
+
+<div id="gambar14"></div>
+<span class="galaksi1">1. Chris Pratt sebagai Peter Quill (Star-Lord)<br> 2. Zoe Saldana sebagai Gamora<br>3. Dave Bautista sebagai Drax the Destroyer <br>4. Bradley Cooper sebagai Rocket<br>5. Vin Diesel sebagai Groot<br>6. Lee Pace sebagai Ronan the Accuser<br>7. Michael Rooker sebagai Yondu Udonta<br>8. Karen Gillan sebagai Nebula<br> 9. Benicio del Toro sebagai Taneleer Tivan (The Collector)<br> 10. Djimon Hounsou sebagai Korath<br> 11. Glenn Close sebagai Irani Rael<br></br> Durasi 122 menit & keuntungan 773.300.000 US Dollar.</span>
+
+<div id="gambar15"></div>
+<span class="galaksi2">1. Chris Pratt sebagai Peter Quill (Star-Lord)<br> 2. Zoe Saldana sebagai Gamora<br>3. Dave Bautista sebagai Drax the Destroyer <br>4. Bradley Cooper sebagai Rocket<br>5. Vin Diesel sebagai Baby Groot<br>6. Kurt Russell sebagai Ego<br>7. Michael Rooker sebagai Yondu Udonta<br>8. Karen Gillan sebagai Nebula<br> 9. Sylvester Stallone sebagai Stakar Ogord<br> 10. Pom Klementieff sebagai Mantis<br> 11. Elizabeth Debicki sebagai Ayesha<br>12. Chris Sullivan sebagai Taserface<br></br> Durasi 137 menit & keuntungan 863.800.000 US Dollar.</span>
+
+<div id="gambar16"></div>
+<span class="penyihir">1. Benedict Cumberbatch sebagai Dr. Stephen Strage (Doctor Strange)<br> 2. Rachel McAdams sebagai Christine Palmer<br>3. Benedict Wong sebagai Wong <br>4. Tilda Swinton  sebagai Ancient One<br>5. Mads Mikkelsen sebagai Kaecilius<br>6. Chiwetel Ejiofor sebagai Karl Mordo<br>7. Michael Stuhlbarg sebagai Nicodemus West<br>8. Benjamin Bratt sebagai Jonathan Pangborn<br> 9. Scott Adkins sebagai Lucian<br> 10. Linda Louise Duan sebagai Tina Minoru<br> 11. Raden Topo Wresniwiro sebagai Hamir<br></br> Durasi 115 menit & keuntungan 677.700.000 US Dollar.</span>
+
+<div id="gambar17"></div>
+<span class="macan">1. Chadwick Boseman sebagai T'Challa (Black Panther)<br> 2. Lupita Nyong'o sebagai Nakia<br>3. Michael B. Jordan sebagai N'Jadaka (Erik "Killmonger" Stevens)<br>4. Danai Gurira sebagai Okoye<br>5. Martin Freeman sebagai Everett K. Ross<br>6. Letitia Wright sebagai Shuri<br>7. Winston Duke  sebagai M'Baku<br>8. Andy Serkis sebagai Ulysses Klaue<br> 9. Angela Bassett sebagai Ramonda<br> 10. John Kani sebagai T'Chaka<br> 11. Sterling K. Brown sebagai N'Jobu<br></br> Durasi 134 menit & keuntungan 1.347.000.000 US Dollar.</span>
+
+<div id="gambar18"></div>
+<span class="cewekkuat">1. Brie Larson sebagai Carol Danvers/Vers (Captain Marvel)<br> 2. Samuel L. Jackson sebagai Nick Fury<br>3. Jude Law sebagai Yon-Rogg<br>4. Annette Bening sebagai Dr. Wendy Lawson/Mar-Vell (the Supreme Intelligence)<br>5. Gemma Chan sebagai Minn-Erva<br>6. Ben Mendelsohn sebagai Talos<br>7. Djimon Hounsou sebagai Korath<br>8. Lashana Lynch sebagai Maria Rambeau<br> 9. Akira Akbar sebagai Monica Rambeau<br> 10. Clark Gregg sebagai Phil Coulson<br> 11. Lee Pace sebagai Ronan the Accuser<br></br> Durasi 124 menit & keuntungan 1.122.000.000 US Dollar.</span>
+
+<div id="gambar19"></div>
+<span class="superhero1">1. Robert Downey Jr. sebagai Tony Stark (Iron Man)<br> 2. Chris Evans sebagai Steve Rogers (Captain America)<br>3. Chris Hemsworth sebagai Thor (Donald Blake)<br>4. Mark Ruffalo sebagai Dr. Bruce Banner (Hulk)<br>5. Scarlett Johansson sebagai Natasha Romanoff (Black Widow)<br>6. Jeremy Renner sebagai Clint Barton (Hawkeye)<br>7. Samuel L. Jackson sebagai Nick Fury<br>8. Tom Hiddleston sebagai Loki<br> 9. Clark Gregg sebagai Phil Coulson<br> 10. Cobie Smulders sebagai Maria Hill<br> 11. Stellan Skarsgård sebagai Erik Selvig<br></br> Durasi 143 menit & keuntungan 1.519.000.000 US Dollar.</span>
+
+<div id="gambar20"></div>
+<span class="superhero2">1. Robert Downey Jr. sebagai Tony Stark (Iron Man)<br> 2. Chris Evans sebagai Steve Rogers (Captain America)<br>3. Chris Hemsworth sebagai Thor (Donald Blake)<br>4. Mark Ruffalo sebagai Dr. Bruce Banner (Hulk)<br>5. Scarlett Johansson sebagai Natasha Romanoff (Black Widow)<br>6. Jeremy Renner sebagai Clint Barton (Hawkeye)<br>7. Samuel L. Jackson sebagai Nick Fury<br>8. Don Cheadle sebagai James "Rhodey" Rhodes (War Machine)<br> 9. Elizabeth Olsen sebagai Wanda Maximoff (Scarlet Witch)<br> 10. Cobie Smulders sebagai Maria Hill<br> 11. Paul Bettany sebagai Vision<br>12. Aaron Taylor-Johnson sebagai Pietro Maximoff (Quicksilver)<br>13. Anthony Mackie sebagai Sam Wilson (Falcon)<br>14. James Spader sebagai Ultron<br></br> Durasi 141 menit & keuntungan 1.405.000.000 US Dollar.</span>
+
+<div id="gambar21"></div>
+<span class="superhero3">1. Robert Downey Jr. sebagai Tony Stark (Iron Man)<br> 2. Chris Evans sebagai Steve Rogers (Captain America)<br>3. Chris Hemsworth sebagai Thor (Donald Blake)<br>4. Mark Ruffalo sebagai Dr. Bruce Banner (Hulk)<br>5. Scarlett Johansson sebagai Natasha Romanoff (Black Widow)<br>6. Benedict Cumberbatch sebagai Dr. Stephen Strange (Doctor Strange)<br>7. Tom Holland sebagai Peter Parker (Spider-Man)<br>8. Don Cheadle sebagai James "Rhodey" Rhodes (War Machine)<br> 9. Elizabeth Olsen sebagai Wanda Maximoff (Scarlet Witch)<br> 10. Chadwick Boseman sebagai T'Challa (Black Panther)<br> 11. Paul Bettany sebagai Vision<br>12. Sebastian Stan sebagai James Buchanan "Bucky" Barnes (Winter Soldier)<br>13. Anthony Mackie sebagai Sam Wilson (Falcon)<br>14. Chris Pratt sebagai Peter Quill (Star-Lord)<br>15. Zoe Saldana sebagai Gamora<br>16. Bradley Cooper sebagai Rocket<br>17. Vin Diesel sebagai Groot<br>17. Pom Klementieff sebagai Mantis<br>18. Dave Bautista sebagai Drax the Destroyer<br>19. Peter Dinklage sebagai Eitri<br>20. Josh Brolin sebagai Thanos<br></br> Durasi 149 menit & keuntungan 2.048.000.000 US Dollar.</span>
+
+<div id="gambar22"></div>
+<span class="superhero4">1. Robert Downey Jr. sebagai Tony Stark (Iron Man)<br> 2. Chris Evans sebagai Steve Rogers (Captain America)<br>3. Chris Hemsworth sebagai Thor (Donald Blake)<br>4. Mark Ruffalo sebagai Dr. Bruce Banner (Hulk)<br>5. Scarlett Johansson sebagai Natasha Romanoff (Black Widow)<br>6. Benedict Cumberbatch sebagai Dr. Stephen Strange (Doctor Strange)<br>7. Tom Holland sebagai Peter Parker (Spider-Man)<br>8. Don Cheadle sebagai James "Rhodey" Rhodes (War Machine)<br> 9. Elizabeth Olsen sebagai Wanda Maximoff (Scarlet Witch)<br> 10. Chadwick Boseman sebagai T'Challa (Black Panther)<br> 11. Jeremy Renner sebagai Clint Barton (Hawkeye)<br>12. Paul Rudd sebagai Scott Lang (Ant-Man)<br>13. Anthony Mackie sebagai Sam Wilson (Falcon)<br>14. Chris Pratt sebagai Peter Quill (Star-Lord)<br>15. Zoe Saldana sebagai Gamora<br>16. Bradley Cooper sebagai Rocket<br>17. Brie Larson sebagai Carol Danvers (Captain Marvel)<br>17. Karen Gillan sebagai Nebula<br>18. Gwyneth Paltrow sebagai Virginia "Pepper" Potts<br>19. Josh Brolin sebagai Thanos<br>20. Danai Gurira sebagai Okoye<br></br> Durasi 181 menit & keuntungan 2.344.000.000 US Dollar.</span>
+
+<footer class="footer">
+  <div class="container1">
+          <ul1>
+            <li1> <a href="aboutus.html">About Us</a></li1>
+            <li1> <a href="contact.html">Contact</a></li1>
+            <li1> <a href="movies.html">Movies</a></li1>
+          </ul1>
+  </div>
+    <div class="container2">&copy copyright Charlie Lubis</div>
+  </div>
+
+
+</footer>
+
+</body>
+</html>

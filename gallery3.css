@@ -1,0 +1,335 @@
+body {
+  float: right;
+  padding-right: -25px;
+  animation: fadeInUp 1s ease-in-out 0s forwards;
+}
+@keyframes fadeInUp {
+  from { 
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+ul{
+    margin-top: -16px;
+    padding: 8px;
+    list-style: none;
+    text-align: center;
+    z-index: 1;
+    margin-left: -10px;
+    color: white;
+}
+.navigation{
+  color: white;
+}
+ul li{
+    font-family: tahoma;
+    font-size: 15px;
+    float: left;
+    text-indent: -150px;
+    width: 331px;
+    height: 40px;
+    margin-right: 5px;
+    margin-left: -5px;
+    opacity: 0.9;
+    line-height: 40px;
+    font-style: 20px; 
+    background: #544f4d; 
+    background: -moz-linear-gradient(top, #544f4d 38%, #0a0e0a 78%, #0a0809 100%); 
+    background: -webkit-linear-gradient(top, #544f4d 38%,#0a0e0a 78%,#0a0809 100%);
+    border-radius: 8px;
+
+}
+ul .child{
+  display: none;
+  margin-top: -8px;
+  margin-left: -2px;
+}
+ul li a{
+  color: white;
+  text-decoration: none;
+  margin-left: 130px;
+}
+ul li a:hover{
+  color: #777777;
+  text-shadow: -.25px -.25px 0 black, 
+                .25px .25px black;
+}
+ul li:hover{
+  cursor: pointer;
+  background: rgb(207,231,250); 
+  background: -moz-linear-gradient(top, rgba(207,231,250,1) 0%, rgba(99,147,193,1) 100%); 
+  background: -webkit-linear-gradient(top, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);
+  z-index: 999;
+}
+.child:hover ul li{
+  color: black;
+  margin-top: -15px;
+  margin-bottom: -8px;
+  background: rgb(207,231,250); 
+  background: -moz-linear-gradient(top, rgba(207,231,250,1) 0%, rgba(99,147,193,1) 100%); 
+  background: -webkit-linear-gradient(top, rgba(207,231,250,1) 0%,rgba(99,147,193,1) 100%);
+  z-index: 999;
+}
+
+.gambar1{
+  background-image: url(ff1.png);
+  width: 200px;
+  height: 200px;
+  margin-top: 80px;
+  margin-left: 0px;
+  -webkit-animation: slide-in-blurred-top 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-top 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.gambar2{
+  background-image: url(ff2.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 218px;
+  position: relative;
+  z-index: -9;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+.gambar3{
+  background-image: url(ff3.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 436px;
+  position: relative;
+  z-index: -9;
+  -webkit-animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.gambar4{
+  background-image: url(ff4.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 654px;
+  position: relative;
+  z-index: -9;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+.gambar5{
+  background-image: url(ff5.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 870px;
+  position: relative;
+  z-index: -9;
+  -webkit-animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.gambar6{
+  background-image: url(ff6.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 1090px;
+  -webkit-animation: roll-in-right 0.6s ease-out both;
+   animation: roll-in-right 0.6s ease-out both;
+   position: relative;
+  z-index: -9;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+@-webkit-keyframes slide-in-blurred-top {
+  0% {
+    -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+            transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-top {
+  0% {
+    -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+            transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+.gambar7{
+  background-image: url(ff7.png);
+  width: 200px;
+  height: 200px;
+  margin-top: 40px;
+  margin-left: 0px;
+  -webkit-animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.gambar8{
+  background-image: url(ff8.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 215px;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.gambar9{
+  background-image: url(ff9.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 430px;
+  -webkit-animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.gambar10{
+  background-image: url(ff10.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 650px;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.gambar11{
+  background-image: url(ff11.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 870px;
+  -webkit-animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.gambar12{
+  background-image: url(ff12.png);
+  width: 200px;
+  height: 200px;
+  margin-top: -200px;
+  margin-left: 1090px;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-elliptic-bottom-fwd 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-elliptic-bottom-fwd {
+  0% {
+    -webkit-transform: translateY(600px) rotateX(30deg) scale(0);
+            transform: translateY(600px) rotateX(30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+            transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% -1400px;
+            transform-origin: 50% -1400px;
+    opacity: 1;
+  }
+}
+@keyframes slide-in-elliptic-bottom-fwd {
+  0% {
+    -webkit-transform: translateY(600px) rotateX(30deg) scale(0);
+            transform: translateY(600px) rotateX(30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+            transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% -1400px;
+            transform-origin: 50% -1400px;
+    opacity: 1;
+  }
+}
+
+
+.background{
+  background-image: url(backgroundx.jpg);
+  background-repeat: no-repeat;
+  width: 99.9%;
+  height: 105%;
+  margin-top: -600px;
+  margin-left: -27px;
+  margin-right: 20px;
+  z-index: -99;
+  position: absolute;
+}
+/*-------- Footer---------*/
+
+
+.footer{
+    font-family: tahoma;
+    width: 97.5%;
+    margin-top: 83px;
+    background-color: #d5d5d5;
+    padding: 20px;
+    border-top: 3px solid #9f9f9f;
+    border-bottom: 3px solid #9f9f9f;
+    height: 0px;
+    font-size: 1vw;
+    margin-left: -28px;
+    margin-bottom: -1px;
+    position: fixed;
+}
+
+.container1 {
+    display: inline-block;
+    float: left; 
+    margin-top: -10px;
+    margin-left: 25px;
+}
+
+.container2{
+    display: inline-block;
+    margin-top: -10px;
+    margin-right: -10px;
+    float: right;
+}
+
+/*---- responsive-----*/
+
