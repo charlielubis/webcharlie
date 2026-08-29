@@ -19,7 +19,7 @@
 .nav-wrapper {
     position: fixed;
 
-    top: 25px;
+    top: 0px;
     left: 50%;
 
     transform: translateX(-50%);
@@ -264,7 +264,7 @@
 
     .nav-wrapper {
 
-        top: 10px;
+        top: 0px;
 
         left: 0;
 
@@ -661,8 +661,9 @@ p.info {
 
 /* custom style */
 .container {
-  margin: 30px;
+  margin: 40px;
   width: 100%;
+  margin-top: 90px;
 }
 
 .shadow {
