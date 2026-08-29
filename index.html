@@ -416,5 +416,80 @@ const flipBook = (elBook) => {
 document.querySelectorAll(".book").forEach(flipBook);
 </script>
 
+<script>
+	const navItems = document.querySelectorAll(".nav-item");
+
+navItems.forEach(item => {
+
+    item.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        navItems.forEach(nav =>
+            nav.classList.remove("active")
+        );
+
+        this.classList.add("active");
+
+    });
+
+});
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("open");
+
+});
+
+
+/* =========================
+   3D NAVBAR MOUSE TILT
+========================= */
+
+const navbar = document.getElementById("navbar");
+
+document.addEventListener("mousemove", (e) => {
+
+    // Disable effect on mobile
+    if (window.innerWidth <= 700) return;
+
+    const rect = navbar.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateY =
+        (x - centerX) / 25;
+
+    const rotateX =
+        (centerY - y) / 25;
+
+    navbar.style.transform =
+        `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+
+
+/* Reset */
+
+document.addEventListener("mouseleave", () => {
+
+    navbar.style.transform =
+        "rotateX(0deg) rotateY(0deg)";
+
+});
+
+</script>
+
 	</body>
 </html>	
