@@ -59,6 +59,8 @@
 
     transition:
         transform 0.15s ease;
+
+	margin-top: -10px;
 }
 
 
@@ -290,6 +292,8 @@
          * Don't let the navbar itself scroll.
          */
         overflow: hidden;
+
+		margin-top: -10px;
     }
 
 
