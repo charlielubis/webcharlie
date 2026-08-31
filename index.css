@@ -888,48 +888,34 @@ p.info {
 ========================================= */
 
 .card-front {
-    transform: rotateY(0deg);
 
-    /*
-    ========================================
-    PREMIUM METALLIC GUNMETAL
-    ========================================
-    */
+    transform: rotateY(0deg);
 
     background:
         linear-gradient(
             135deg,
-            #f2f2f2 0%,
-            #8f8f8f 8%,
-            #292929 22%,
-            #111 48%,
-            #3d3d3d 72%,
-            #9a9a9a 91%,
-            #e8e8e8 100%
+            #f4f4f4 0%,
+            #a8a8a8 7%,
+            #3a3a3a 18%,
+            #151515 45%,
+            #3c3c3c 70%,
+            #a5a5a5 91%,
+            #eeeeee 100%
         );
-
-    /*
-    METALLIC EMBOSS
-    */
 
     box-shadow:
 
-        /* deep floating shadow */
         18px 22px 35px rgba(0,0,0,.75),
 
-        /* bright upper-left bevel */
         -7px -7px 14px rgba(255,255,255,.55),
 
-        /* dark lower-right bevel */
         8px 8px 16px rgba(0,0,0,.95),
 
-        /* inner metallic bevel */
         inset 5px 5px 10px rgba(255,255,255,.25),
 
         inset -6px -6px 12px rgba(0,0,0,.8),
 
-        /* metallic edge */
-        inset 0 0 0 2px rgba(255,255,255,.12);
+        inset 0 0 0 2px rgba(255,255,255,.18);
 }
 
 
@@ -1000,39 +986,34 @@ p.info {
 
     position: absolute;
 
-    inset: 9px;
+    inset: 7px;
 
-    border-radius: 13px;
+    border-radius: 14px;
 
     pointer-events: none;
 
     z-index: 50;
 
-    /*
-    METALLIC FRAME
-    */
-
-    border: 1px solid rgba(255,255,255,.45);
+    border: 2px solid rgba(255,255,255,.32);
 
     box-shadow:
 
-        /* highlight edge */
-        inset 2px 2px 3px
-        rgba(255,255,255,.45),
+        /* bright upper-left */
+        inset 2px 2px 4px
+        rgba(255,255,255,.5),
 
-        /* dark engraved edge */
+        /* dark lower-right */
         inset -3px -3px 5px
         rgba(0,0,0,.9),
 
-        /* outer metal line */
+        /* metallic outer edge */
         0 0 0 1px
-        rgba(0,0,0,.7),
+        rgba(0,0,0,.85),
 
-        /* subtle glow */
+        /* subtle metal shine */
         0 0 8px
-        rgba(255,255,255,.08);
+        rgba(255,255,255,.12);
 }
-
 /* =========================================
    SECOND EMBOSS LINE
 ========================================= */
@@ -1070,7 +1051,7 @@ p.info {
     opacity: .65;
 }
 /* =========================================
-   IMAGE
+   CHARACTER IMAGE — INSET INSIDE METAL FRAME
 ========================================= */
 
 .widow,
@@ -1083,22 +1064,47 @@ p.info {
 
     position: absolute;
 
-    top: 0;
-    left: 0;
+    /* IMPORTANT:
+       Leave the metallic outer frame visible */
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
 
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
 
-    border-radius: 18px;
+    border-radius: 11px;
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    transform: translateZ(15px);
+    /*
+       Image sits slightly above the card
+    */
+    transform: translateZ(18px);
+
+    /*
+       Premium image depth
+    */
+    box-shadow:
+
+        /* inner dark edge */
+        inset 0 0 0 1px rgba(0,0,0,.75),
+
+        /* inner highlight */
+        inset 2px 2px 5px rgba(255,255,255,.18),
+
+        /* recessed edge */
+        inset -3px -3px 7px rgba(0,0,0,.65),
+
+        /* image shadow */
+        0 5px 12px rgba(0,0,0,.65);
 
     transition:
-        filter .4s ease;
+        filter .4s ease,
+        transform .4s ease;
 }
 
 
@@ -1373,15 +1379,21 @@ p.info {
    IMAGE BRIGHTNESS
 ========================================= */
 
-.card:hover .widow,
-.card:hover .hulk,
-.card:hover .scarlet,
-.card:hover .vision,
-.card:hover .antman,
-.card:hover .falcon,
-.card:hover .hawkeye {
+.card:not(.flipped):hover .widow,
+.card:not(.flipped):hover .hulk,
+.card:not(.flipped):hover .scarlet,
+.card:not(.flipped):hover .vision,
+.card:not(.flipped):hover .antman,
+.card:not(.flipped):hover .falcon,
+.card:not(.flipped):hover .hawkeye {
 
-    filter: brightness(1.08);
+    filter:
+        brightness(1.12)
+        contrast(1.08);
+
+    transform:
+        translateZ(28px)
+        scale(1.015);
 }
 
 
