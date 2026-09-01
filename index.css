@@ -2018,7 +2018,7 @@ p.info {
   width: 100%;
   font-size: 2cqmin;
   width: 60%;
-  height: 70%;
+  height: 80%;
   margin-top: -80px;
   /*1* allow pointer events on pages */
   pointer-events: all;
@@ -2033,6 +2033,13 @@ p.info {
   rotate: 0 1 0 calc(clamp(0, var(--c) - var(--i), 1) * -180deg);
 }
 
+.page-image {
+	margin-top: -15px;
+}
+.content h1 {
+	font-size: 17px;
+	margin-top: -15px;
+}
 .front,
 .back {
   position: relative;
