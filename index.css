@@ -1825,7 +1825,7 @@ p.info {
  @media (max-width: 666px) {
 
   .magazine::before {
-	  height: 240px;
+	  height: 410px;
 	  margin-top: -80px;
   }
 
