@@ -1547,9 +1547,19 @@ p.info {
 } 
 
 
-/* ========================================================= SPINE ========================================================= */ .magazine::before { content: ""; position: absolute; left: 50%; top: 0; width: 13px; height: 100%; transform: translateX(-50%) translateZ(-5px); background: linear-gradient( 90deg, rgba(0,0,0,.75), rgba(255,255,255,.12), rgba(0,0,0,.8) ); box-shadow: 0 0 8px rgba(0,0,0,.5); z-index: 1000; pointer-events: none; } 
-
-
+/* ========================================================= SPINE ========================================================= */ 
+.magazine::before { 
+	content: ""; 
+	position: absolute; 
+	left: 50%; 
+	top: -100px; 
+	width: 13px; 
+	height: 70%; 
+	transform: translateX(-50%) translateZ(-5px); 
+	background: linear-gradient( 90deg, rgba(0,0,0,.75), rgba(255,255,255,.12), rgba(0,0,0,.8) ); 
+	box-shadow: 0 0 8px rgba(0,0,0,.5); 
+	z-index: 1000; 
+	pointer-events: none; } 
 
 /* ========================================================= MOBILE ========================================================= */ @media(max-width:700px) { .magazine { width: 95vw; height: 62vh; } .content { padding: 20px; } .cover-content { padding: 20px; } } @media(max-width:500px) { .magazine { width: 96vw; height: 58vh; } .content { padding: 14px; } .content p { font-size: 9px; line-height: 1.4; } }
 
@@ -1663,7 +1673,7 @@ p.info {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: -370px;
+    margin-top: -700px;
     position: relative;
     z-index: 2;
     background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='margin:auto;background:rgba(221, 221, 221, 0);display:block;z-index:1;position:relative' width='3000' height='588' preserveAspectRatio='xMidYMid' viewBox='0 0 3000 588'><g transform='translate(1500,294) scale(-1,-1) translate(-1500,-294)'><linearGradient id='lg-0.9997820734103322' x1='0' x2='1' y1='0' y2='0'><stop stop-color='%23ffffff' offset='0'></stop><stop stop-color='%23ffffff' offset='1'></stop></linearGradient><path d='' fill='url(%23lg-0.9997820734103322)' opacity='0.37'><animate attributeName='d' dur='10s' repeatCount='indefinite' keyTimes='0;0.333;0.667;1' calcMode='spline' keySplines='0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1' begin='0s' values='M0 0L 0 558.9888918874962Q 300 557.9557135224538  600 520.7201791558826T 1200 493.0888623871913T 1800 448.04775521801616T 2400 442.32786157869174T 3000 400.5000938220193L 3000 0 Z;M0 0L 0 531.8219503412562Q 300 581.2367793971861  600 536.6456794845121T 1200 526.1199153747991T 1800 453.6567543549444T 2400 426.5449945053999T 3000 429.5661867072931L 3000 0 Z;M0 0L 0 572.7600127243211Q 300 599.6891402698932  600 560.6693012791557T 1200 514.6895687962055T 1800 485.3535117451038T 2400 447.8902433799051T 3000 454.9458231426154L 3000 0 Z;M0 0L 0 558.9888918874962Q 300 557.9557135224538  600 520.7201791558826T 1200 493.0888623871913T 1800 448.04775521801616T 2400 442.32786157869174T 3000 400.5000938220193L 3000 0 Z'></animate></path></g></svg>") no-repeat center bottom / cover;
@@ -1918,6 +1928,9 @@ p.info {
   display: flex;
   width: 100%;
   font-size: 2cqmin;
+  width: 50%;
+  height: 70%;
+  margin-top: -100px;
   /*1* allow pointer events on pages */
   pointer-events: all;
   user-select: none;
