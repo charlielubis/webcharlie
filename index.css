@@ -1763,6 +1763,14 @@ p.info {
 
  @media (max-width: 666px) {
 
+  .magazine::before {
+	  height: 400px;
+	  margin-top: -100px;
+  }
+
+   .magazine-scene {
+	   margin-top: 100px;
+   }
   .wrapper {
 	position: relative;
 	width: 100%;
@@ -1948,7 +1956,7 @@ p.info {
   display: flex;
   width: 100%;
   font-size: 2cqmin;
-  width: 50%;
+  width: 60%;
   height: 70%;
   margin-top: -100px;
   /*1* allow pointer events on pages */
