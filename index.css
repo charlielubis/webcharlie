@@ -892,31 +892,18 @@ p.info {
 
     transform: rotateY(0deg);
 
-    background:
-        linear-gradient(
-            135deg,
-            #f4f4f4 0%,
-            #a8a8a8 7%,
-            #3a3a3a 18%,
-            #151515 45%,
-            #3c3c3c 70%,
-            #a5a5a5 91%,
-            #eeeeee 100%
-        );
+    background: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
     box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
 
-        5px 5px 5px rgba(-1,0,0,.75),
+    color: white;
 
-        -2px -2px 5px rgba(255,255,255,.55),
-
-        8px 8px 16px rgba(0,0,0,.95),
-
-        inset 5px 5px 10px rgba(255,255,255,.25),
-
-        inset -6px -6px 12px rgba(0,0,0,.8),
-
-        inset 0 0 0 2px rgba(255,255,255,.18);
+    overflow: hidden;
 }
 
 
@@ -1426,6 +1413,18 @@ p.info {
 
         min-width: 0;
         min-height: 0;
+        background: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+
+    color: white;
+
+    overflow: hidden;
     }
 }
 
