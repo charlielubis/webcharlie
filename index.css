@@ -1891,56 +1891,42 @@ p.info {
     margin: 20px auto;
   }
 .widow {
-  width: 100%;
-  height: 100%;
   background-image: url("black-widow1.jpg");
 }
-.bleck {
+.black {
   font-size: 7px;
 }
 .hulk{
-  width: 100%;
-  height: 100%;
   background-image: url("hulk1.jpg");
 }
 .bruce {
   font-size: 6.5px;
 }
 .scarlet {
-  width: 100%;
-  height: 100%;
   background-image: url("scarlet-witch2.jpg");
 }
 .witch {
   font-size: 6.2px;
 }
-.visien{
-  width: 100%;
-  height: 100%;
+.visi0n{
   background-image: url("Vision2.jpg");
 }
 .vision {
   font-size: 6.3px;
 }
-.antmen {
-  width: 100%;
-  height: 100%;
+.antman {
   background-image: url("antman1.jpg");
 }
 .antman {
   font-size: 7px;
 }
-.falcen {
-  width: 100%;
-  height: 100%;
+.falcon {
   background-image: url("falcon1.jpg");
 }
 .falcon {
   font-size: 7px;
 }
-.hawkeyes {
-  width: 100%;
-  height: 100%;
+.hawkeye {
   background-image: url("hawkeye1.jpg");
 }
 .hawkeye {
