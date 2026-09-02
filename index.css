@@ -5,7 +5,7 @@
   min-height: 100vh; /* allow content to grow beyond */
   font-family: "Antic Slab", serif;
   perspective: 700px;
-  background-color: #000000;
+  background-color: url ("bekgron.jpg");
   padding: 0;
   margin: 0;
 }
