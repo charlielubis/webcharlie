@@ -1636,6 +1636,10 @@ p.info {
 	z-index: 1000; 
 	pointer-events: none; } 
 
+.back-cover-info {
+	color: white;
+}
+
 /* ========================================================= MOBILE ========================================================= */ 
 @media(max-width:700px) { 
 	.magazine { width: 100vw; height: 55vh; } 
