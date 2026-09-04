@@ -371,7 +371,7 @@
    <div class="page-face page-front cover">
 
         <img
-            src="majalah.jpg"
+            src="cover.png"
             class="cover-image"
             alt="Magazine Cover">
 
@@ -1169,34 +1169,41 @@ document.addEventListener(
    Does NOT modify the existing page flip system.
 ========================================================= */
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const coverImage = document.querySelector(
-        ".magazine > .page:first-child .cover-image"
-    );
+    const cover = document.querySelector(".cover-image");
 
-    const coverPage = document.querySelector(
-        ".magazine > .page:first-child"
-    );
+    if (!cover) return;
 
-    if (!coverImage || !coverPage) return;
+    let isMoving = false;
 
-    coverPage.addEventListener("click", () => {
+    cover.addEventListener("click", function () {
 
-        coverImage.classList.remove("cover-motion");
+        if (isMoving) return;
 
-        /* Restart animation every click */
-        void coverImage.offsetWidth;
+        isMoving = true;
 
-        coverImage.classList.add("cover-motion");
+        /* Start the slow cover movement */
+        cover.classList.remove("cover-to-majalah");
 
-        coverImage.addEventListener(
-            "animationend",
-            () => {
-                coverImage.classList.remove("cover-motion");
-            },
-            { once: true }
-        );
+        /* Restart animation */
+        void cover.offsetWidth;
+
+        cover.classList.add("cover-to-majalah");
+
+        /*
+         * Change cover.png -> majalah.jpg
+         * while the image is almost invisible.
+         */
+        setTimeout(function () {
+            cover.src = "majalah.jpg";
+        }, 1320);
+
+        /* Finish */
+        setTimeout(function () {
+            cover.classList.remove("cover-to-majalah");
+            isMoving = false;
+        }, 2400);
 
     });
 
