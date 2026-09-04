@@ -368,78 +368,42 @@
 
     <!-- FRONT COVER -->
 
-	<div class="page-face page-front cover magazine-cover-animation">
-
-    <!-- =========================================
-         3 COVER IMAGES
-    ========================================== -->
-
-    <div class="cover-slideshow">
+   <div class="page-face page-front cover">
 
         <img
             src="majalah.jpg"
-            class="cover-slide active"
-            alt="Magazine Cover 1">
+            class="cover-image"
+            alt="Magazine Cover">
 
-        <img
-            src="cover.png"
-            class="cover-slide"
-            alt="Magazine Cover 2">
+        <div class="cover-gloss"></div>
 
-        <img
-            src="cover1.png"
-            class="cover-slide"
-            alt="Magazine Cover 3">
+        <div class="cover-content">
 
-    </div>
-
-
-    <!-- =========================================
-         3D GLOSS
-    ========================================== -->
-
-    <div class="cover-gloss-animation"></div>
-
-
-    <!-- =========================================
-         ORIGINAL COVER CONTENT
-    ========================================== -->
-
-    <div class="cover-content">
-
-        <div class="embossed-title">
-            C
-        </div>
-
-        <div>
-
-            <div class="cover-headline">
-                Silahkan di Klik
+            <div class="embossed-title">
+                C
             </div>
 
-            <div style="
-                margin-top:14px;
-                color:#ccc;
-                font-size:10px;
-                letter-spacing:3px;
-            ">
-                Hasil Karya Charlie
+            <div>
+
+                <div class="cover-headline">
+                    Silahkan di Klik
+                </div>
+
+                <div style="
+                    margin-top:14px;
+                    color:#ccc;
+                    font-size:10px;
+                    letter-spacing:3px;
+                ">
+                    Hasil Karya Charlie
+                </div>
+
             </div>
 
         </div>
 
     </div>
 
-
-    <!-- =========================================
-         CLICK INDICATOR
-    ========================================== -->
-
-    <div class="cover-click-hint">
-        CLICK
-    </div>
-
-</div>
 
 
     <!-- INSIDE FRONT COVER -->
@@ -1199,128 +1163,45 @@ document.addEventListener(
 
 </script>
 
-<script>
-	<script>
+
 /* =========================================================
    MAGAZINE COVER IMAGE CLICK TRANSITION
    Does NOT modify the existing page flip system.
 ========================================================= */
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+    const magazine =
+        document.getElementById("magazine");
+
+    if (!magazine) return;
+
 
     const cover =
-        document.querySelector(
-            ".magazine-cover-animation"
+        magazine.querySelector(
+            ".page:first-child .page-front.cover"
         );
 
     if (!cover) return;
 
 
-    const slides =
-        [...cover.querySelectorAll(".cover-slide")];
-
-
-    if (!slides.length) return;
-
-
-    let currentSlide = 0;
-
-    let animating = false;
-
-
-    /* =====================================================
-       SHOW SLIDE
-    ===================================================== */
-
-    function showSlide(index) {
-
-        slides.forEach((slide, i) => {
-
-            slide.classList.toggle(
-                "active",
-                i === index
-            );
-
-        });
-
-    }
-
-
-    /* =====================================================
-       CLICK
-    ===================================================== */
-
-    cover.addEventListener("click", (event) => {
+    cover.addEventListener("click", function (event) {
 
         /*
-         * Prevent this click from interfering
-         * with the magazine page flip.
+         * IMPORTANT:
+         * Prevent the normal magazine page flip.
          */
         event.stopPropagation();
 
 
-        if (animating) return;
-
-        animating = true;
-
-
-        /* ================================================
-           PLAY 3D PUSH ANIMATION
-        ================================================= */
-
-        cover.classList.remove(
-            "cover-clicked"
+        magazine.classList.toggle(
+            "cover-standing"
         );
-
-
-        /*
-         * Force browser to restart animation.
-         */
-        void cover.offsetWidth;
-
-
-        cover.classList.add(
-            "cover-clicked"
-        );
-
-
-        /* ================================================
-           NEXT IMAGE
-        ================================================= */
-
-        currentSlide =
-            (currentSlide + 1)
-            % slides.length;
-
-
-        showSlide(currentSlide);
-
-
-        /* ================================================
-           RESET
-        ================================================= */
-
-        setTimeout(() => {
-
-            cover.classList.remove(
-                "cover-clicked"
-            );
-
-            animating = false;
-
-        }, 1200);
 
     });
 
-
-    /* =====================================================
-       INITIAL
-    ===================================================== */
-
-    showSlide(currentSlide);
-
 });
 </script>
-</script>
+
 </body>
 </html>
