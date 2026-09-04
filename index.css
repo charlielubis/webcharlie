@@ -1429,6 +1429,259 @@ p.info {
 }
 
 /* News */
+/* ============= ANIMASI COVER ================== */
+.stage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+    perspective: 1600px;
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+}
+
+.cover0 {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    pointer-events: none;
+    user-select: none;
+
+    transform-origin: center center;
+
+    will-change: transform, opacity;
+}
+
+
+/* ==================================================
+   IMAGE 1
+   STARTING POSITION
+   ================================================== */
+
+.cover-1 {
+    z-index: 3;
+
+    width: min(80vw, 800px);
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(130px)
+        rotateX(62deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(1);
+
+    /*
+       SLOW MOTION
+    */
+    transition:
+        transform 2.4s cubic-bezier(.22, .61, .36, 1),
+        opacity .5s ease;
+}
+
+
+/* ==================================================
+   IMAGE 2
+   NORMAL SIZE / FRONT
+   ================================================== */
+
+.cover-2 {
+    z-index: 2;
+
+    width: min(55vw, 500px);
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(100px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(.95);
+
+    /*
+       FAST
+    */
+    transition: none;
+}
+
+
+/* ==================================================
+   IMAGE 3
+   NORMAL SIZE / FRONT
+   ================================================== */
+
+.cover-3 {
+    z-index: 1;
+
+    width: min(55vw, 500px);
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(100px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(.95);
+
+    /*
+       VERY FAST
+    */
+    transition: none;
+}
+
+
+/* ==================================================
+   IMAGE 1 → IMAGE 2
+   SLOW DOWNWARD → FRONT
+   ================================================== */
+
+.stage.show-image2 .cover-1 {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(300px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(.94);
+}
+
+
+.stage.show-image2 .cover-2 {
+
+    z-index: 5;
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(-1px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(1.1);
+}
+
+
+/* ==================================================
+   IMAGE 2 → IMAGE 3
+   VERY FAST
+   ================================================== */
+
+.stage.show-image3 .cover-1 {
+    opacity: 0;
+}
+
+
+.stage.show-image3 .cover-2 {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(0)
+        rotateX(0deg)
+        scale(1.1);
+}
+
+
+.stage.show-image3 .cover-3 {
+
+    z-index: 5;
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(0)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(1.1);
+}
+
+
+/* ==================================================
+   IMAGE 3 → IMAGE 1
+   QUICK HIDE
+   ================================================== */
+
+.stage.returning .cover-3 {
+
+    z-index: 4;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(100px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(.88);
+
+    transition:
+        transform .28s ease-in,
+        opacity .18s ease-in;
+}
+
+
+/* ==================================================
+   IMAGE 1 RETURNS
+   ================================================== */
+
+.stage.returning .cover-1 {
+
+    z-index: 6;
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(130px)
+        rotateX(62deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(1);
+
+    transition:
+        transform .55s cubic-bezier(.22, .61, .36, 1),
+        opacity .18s ease;
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 600px) {
+
+    .cover-1 {
+        width: 90vw;
+    }
+
+    .cover-2,
+    .cover-3 {
+        width: min(70vw, 400px);
+    }
+}
+
 /* REALISTIC 3D MAGAZINE */
  /* ========================================================= CENTER SCENE ========================================================= */ 
 .magazine-scene {
