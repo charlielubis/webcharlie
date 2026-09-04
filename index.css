@@ -1429,214 +1429,6 @@ p.info {
 }
 
 /* News */
-/* ============= ANIMASI COVER ================== */
-.magazine > .page:first-child .page-front.cover {
-    background: transparent !important;
-}
-
-.magazine > .page:first-child .page-front.cover .cover-image {
-    display: none !important;
-}
-
-.magazine > .page:first-child .page-front.cover .cover-gloss {
-    display: none !important;
-}
-
-.magazine > .page:first-child .page-front.cover .cover-content {
-    display: none !important;
-}
-
-	 /* =========================================================
-   BLEND MAGAZINE COVER INTO ANIMATION
-   DO NOT DISPLAY majalah-cover.jpg AS A SECOND COVER
-   ========================================================= */
-
-#cover3 {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-}
-
-#cover3 .cover-image,
-#cover3 .cover-gloss,
-#cover3 .cover-content {
-    opacity: 0 !important;
-    visibility: hidden !important;
-}
-
-
-/* =========================================================
-   COVER ANIMATION
-   ========================================================= */
-
-.stage {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    perspective: 1600px;
-    cursor: pointer;
-    transform-style: preserve-3d;
-}
-
-
-/* Common cover */
-.stage .cover0 {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-
-    height: auto;
-    object-fit: contain;
-
-    pointer-events: none;
-    user-select: none;
-
-    transform-origin: center center;
-
-    will-change: transform, opacity;
-}
-
-
-/* =========================================================
-   COVER.PNG
-   INITIAL 3D POSITION
-   ========================================================= */
-
-.stage .cover-1 {
-    z-index: 9999;
-
-    width: min(80vw, 800px);
-
-    opacity: 1;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(130px)
-        rotateX(62deg)
-        rotateY(0deg)
-        rotateZ(0deg)
-        scale(1);
-
-    transition:
-        transform 1.8s cubic-bezier(.22,.61,.36,1),
-        opacity .25s ease;
-}
-
-
-/* =========================================================
-   COVER1.PNG
-   FRONT / NORMAL COVER
-   ========================================================= */
-
-.stage .cover-2 {
-    z-index: 10000;
-
-    width: min(55vw, 500px);
-
-    opacity: 0;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(0)
-        rotateX(0deg)
-        rotateY(0deg)
-        rotateZ(0deg)
-        scale(1);
-
-    transition: none;
-}
-
-
-/* =========================================================
-   CLICK
-   COVER.PNG → COVER1.PNG
-   ========================================================= */
-
-.stage.show-cover1 .cover-1 {
-    opacity: 0;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(300px)
-        rotateX(0deg)
-        rotateY(0deg)
-        rotateZ(0deg)
-        scale(.94);
-}
-
-
-.stage.show-cover1 .cover-2 {
-    z-index: 10001;
-
-    opacity: 1;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(0)
-        rotateX(0deg)
-        rotateY(0deg)
-        rotateZ(0deg)
-        scale(1);
-}
-
-
-/* =========================================================
-   RETURN
-   COVER1.PNG → COVER.PNG
-   ========================================================= */
-
-.stage.return-cover .cover-2 {
-    opacity: 0;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(100px)
-        rotateX(0deg)
-        rotateY(0deg)
-        rotateZ(0deg)
-        scale(.88);
-
-    transition:
-        transform .25s ease-in,
-        opacity .18s ease-in;
-}
-
-
-.stage.return-cover .cover-1 {
-    z-index: 10002;
-
-    opacity: 1;
-
-    transform:
-        translate(-50%, -50%)
-        translateY(130px)
-        rotateX(62deg)
-        rotateY(0deg)
-        rotateZ(0deg)
-        scale(1);
-
-    transition:
-        transform .55s cubic-bezier(.22,.61,.36,1),
-        opacity .18s ease;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .stage .cover-1 {
-        width: 90vw;
-    }
-
-    .stage .cover-2 {
-        width: min(70vw, 400px);
-    }
-
-}
 
 /* REALISTIC 3D MAGAZINE */
  /* ========================================================= CENTER SCENE ========================================================= */ 
@@ -2276,3 +2068,292 @@ p.info {
   rotate: 0 1 0 180deg;
 }
 
+
+/* =========================================================
+ANIMATED COVER
+Completely isolated from the existing website
+========================================================= */
+
+.cover-animation-stage {
+position: fixed;
+
+inset: 0;
+
+width: 100%;
+height: 100vh;
+
+overflow: hidden;
+
+perspective: 1600px;
+
+cursor: pointer;
+
+transform-style: preserve-3d;
+
+z-index: 9999;
+
+pointer-events: auto;
+
+
+}
+
+/* =========================================================
+COVER IMAGE BASE
+========================================================= */
+
+.cover-animation-image {
+
+position: absolute;
+
+left: 50%;
+top: 50%;
+
+height: auto;
+
+object-fit: contain;
+
+pointer-events: none;
+user-select: none;
+
+transform-origin: center center;
+
+will-change:
+    transform,
+    opacity;
+
+
+}
+
+/* =========================================================
+IMAGE 1
+INITIAL COVER
+========================================================= */
+
+.cover-animation-1 {
+
+z-index: 3;
+
+width: min(80vw, 800px);
+
+opacity: 1;
+
+transform:
+    translate(-50%, -50%)
+    translateY(130px)
+    rotateX(62deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(1);
+
+transition:
+    transform 2.4s cubic-bezier(.22, .61, .36, 1),
+    opacity .5s ease;
+
+
+}
+
+/* =========================================================
+IMAGE 2
+========================================================= */
+
+.cover-animation-2 {
+
+z-index: 2;
+
+width: min(55vw, 500px);
+
+opacity: 0;
+
+transform:
+    translate(-50%, -50%)
+    translateY(100px)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(.95);
+
+transition: none;
+
+
+}
+
+/* =========================================================
+IMAGE 3
+========================================================= */
+
+.cover-animation-3 {
+
+z-index: 1;
+
+width: min(55vw, 500px);
+
+opacity: 0;
+
+transform:
+    translate(-50%, -50%)
+    translateY(100px)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(.95);
+
+transition: none;
+
+
+}
+
+/* =========================================================
+IMAGE 1 → IMAGE 2
+========================================================= */
+
+.cover-animation-stage.show-image2
+.cover-animation-1 {
+
+opacity: 0;
+
+transform:
+    translate(-50%, -50%)
+    translateY(300px)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(.94);
+
+
+}
+
+.cover-animation-stage.show-image2
+.cover-animation-2 {
+
+z-index: 5;
+
+opacity: 1;
+
+transform:
+    translate(-50%, -50%)
+    translateY(-1px)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(1.1);
+
+
+}
+
+/* =========================================================
+IMAGE 2 → IMAGE 3
+========================================================= */
+
+.cover-animation-stage.show-image3
+.cover-animation-1 {
+
+opacity: 0;
+
+
+}
+
+.cover-animation-stage.show-image3
+.cover-animation-2 {
+
+opacity: 0;
+
+transform:
+    translate(-50%, -50%)
+    translateY(0)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(1.1);
+
+
+}
+
+.cover-animation-stage.show-image3
+.cover-animation-3 {
+
+z-index: 5;
+
+opacity: 1;
+
+transform:
+    translate(-50%, -50%)
+    translateY(0)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(1.1);
+
+
+}
+
+/* =========================================================
+IMAGE 3 → IMAGE 1
+========================================================= */
+
+.cover-animation-stage.returning
+.cover-animation-3 {
+
+z-index: 4;
+
+opacity: 0;
+
+transform:
+    translate(-50%, -50%)
+    translateY(100px)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(.88);
+
+transition:
+    transform .28s ease-in,
+    opacity .18s ease-in;
+
+
+}
+
+/* =========================================================
+IMAGE 1 RETURNS
+========================================================= */
+
+.cover-animation-stage.returning
+.cover-animation-1 {
+
+z-index: 6;
+
+opacity: 1;
+
+transform:
+    translate(-50%, -50%)
+    translateY(130px)
+    rotateX(62deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(1);
+
+transition:
+    transform .55s cubic-bezier(.22, .61, .36, 1),
+    opacity .18s ease;
+
+
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+.cover-animation-1 {
+
+    width: 90vw;
+}
+
+.cover-animation-2,
+.cover-animation-3 {
+
+    width: min(70vw, 400px);
+}
+
+
+}
