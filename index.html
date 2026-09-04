@@ -356,14 +356,27 @@
 <!---------------------------- MAGAZINE ------------------------------------->
 
 <!----- ANIMASI COVER ------>
-<!----- BLENDED COVER ANIMATION ------>
-<div class="stage" id="stage">
+<div class="cover-animation-stage" id="coverAnimationStage">
+<img
+    src="cover.png"
+    class="cover-animation-image cover-animation-1"
+    alt=""
+>
 
-    <!-- Animated cover -->
-    <img src="cover.png" class="cover0 cover-1" id="cover1">
-    <img src="cover1.png" class="cover0 cover-2" id="cover2">
+<img
+    src="cover1.png"
+    class="cover-animation-image cover-animation-2"
+    alt=""
+>
+
+<img
+    src="cover2.png"
+    class="cover-animation-image cover-animation-3"
+    alt=""
+>
 
 </div>
+
 
 
 <!-- ======================================================
@@ -1169,130 +1182,33 @@ document.addEventListener(
 
 </script>
 
-<script>
+
 /* ================= ANIMASI COVER ================= */
-/* =========================================================
-   BLENDED COVER ANIMATION
-   ONLY COVER ANIMATION
-   MAGAZINE PAGE CODE IS NOT CHANGED
-   ========================================================= */
-
-const stage = document.getElementById("stage");
-
-let coverTimer = null;
-let coverBusy = false;
-
-
-/* =========================================================
-   COVER.PNG → COVER1.PNG
-   ========================================================= */
-
-function showCover1() {
-
-    clearTimeout(coverTimer);
-
-    coverBusy = true;
-
-    stage.classList.remove("return-cover");
-
-    stage.classList.add("show-cover1");
-
-
-    /*
-        Allow the slow cover movement to finish
-    */
-
-    setTimeout(() => {
-        coverBusy = false;
-    }, 1800);
-
-
-    /*
-        COVER1 stays visible for 5 seconds.
-        If there is no click, return to cover.png.
-    */
-
-    coverTimer = setTimeout(() => {
-
-        returnCover();
-
-    }, 5000);
-}
-
-
-/* =========================================================
-   COVER1.PNG → COVER.PNG
-   ========================================================= */
-
-function returnCover() {
-
-    clearTimeout(coverTimer);
-
-    coverBusy = true;
-
-    stage.classList.remove("show-cover1");
-
-    /*
-        Small delay forces browser to apply
-        the quick return animation.
-    */
-
-    requestAnimationFrame(() => {
-
-        stage.classList.add("return-cover");
-
-    });
-
-
-    setTimeout(() => {
-
-        stage.classList.remove("return-cover");
-
-        coverBusy = false;
-
-    }, 650);
-}
-
-
-/* =========================================================
-   CLICK COVER
-   ========================================================= */
-
-stage.addEventListener("click", function () {
-
-    if (coverBusy) {
-        return;
-    }
-
-
-    /*
-        INITIAL COVER
-        cover.png → cover1.png
-    */
-
-    if (
-        !stage.classList.contains("show-cover1") &&
-        !stage.classList.contains("return-cover")
-    ) {
-
-        showCover1();
-
-        return;
-    }
-
-
-    /*
-        COVER1 CLICK
-        immediately return to cover.png
-    */
-
-    if (stage.classList.contains("show-cover1")) {
-
-        returnCover();
-
-    }
-
-});
+<script> /* ========================================================= ANIMATED COVER CONTROLLER This script is intentionally isolated from: - Navbar - Slicebox - Flip cards - Magazine - Footer ========================================================= 
+*/ document.addEventListener("DOMContentLoaded", () => { const coverStage = document.getElementById("coverAnimationStage"); if (!coverStage) return; let coverImage3Timer = null; let coverAnimationBusy = false; 
+/* ===================================================== SHOW IMAGE 2 ===================================================== */ 
+function showCoverImage2() { clearTimeout(coverImage3Timer); coverAnimationBusy = true; coverStage.classList.remove("show-image3"); coverStage.classList.remove("returning"); coverStage.classList.add("show-image2"); 
+/* * Image 1 → Image 2 * 2.4 second animation */ 
+setTimeout(() => { coverAnimationBusy = false; }, 2400); 
+/* * After Image 2 has been displayed * for 5 seconds, show Image 3. */ 
+setTimeout(() => { coverStage.classList.remove( "show-image2" ); coverStage.classList.add( "show-image3" ); startCoverImage3Timer(); }, 5000); } 
+/* ===================================================== IMAGE 3 → IMAGE 1 ===================================================== */ 
+function returnToCoverImage1() { clearTimeout(coverImage3Timer); coverAnimationBusy = true; 
+/* * Hide Image 3 */ coverStage.classList.remove( "show-image3" ); 
+/* * Force browser to process * the state change first. */ 
+requestAnimationFrame(() => { coverStage.classList.add( "returning" ); }); 
+/* * Finish return animation */ 
+setTimeout(() => { coverStage.classList.remove( "returning" ); coverAnimationBusy = false; }, 650); } 
+/* ===================================================== IMAGE 3 TIMER ===================================================== */ 
+function startCoverImage3Timer() { clearTimeout(coverImage3Timer); 
+/* * Automatically return to Image 1 * after 5 seconds. */ 
+coverImage3Timer = setTimeout(() => { returnToCoverImage1(); }, 5000); } 
+/* ===================================================== CLICK HANDLER ===================================================== */ 
+coverStage.addEventListener( "click", () => { 
+/* * Ignore clicks while * the animation is running. */ if (coverAnimationBusy) { return; } 
+/* --------------------------------------------- IMAGE 1 → IMAGE 2 --------------------------------------------- */ 
+if ( !coverStage.classList.contains( "show-image2" ) && !coverStage.classList.contains( "show-image3" ) && !coverStage.classList.contains( "returning" ) ) { showCoverImage2(); return; }
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		 /* --------------------------------------------- IMAGE 3 → IMAGE 1 --------------------------------------------- */ if ( coverStage.classList.contains( "show-image3" ) ) { returnToCoverImage1(); } } ); }); </script>
 </script>
 
 </body>
