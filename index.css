@@ -1583,6 +1583,46 @@ p.info {
 
 /* ========================================================= COVER IMAGE ========================================================= */ 
 .cover-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; } 
+/* =========================================================
+   MAJALAH.JPG - CLICK MOTION
+   ========================================================= */
+
+.magazine > .page:first-child .cover-image {
+    transform-origin: center center;
+    will-change: transform, filter;
+}
+
+/* Motion when the cover is clicked */
+.magazine > .page:first-child .cover-image.cover-motion {
+    animation: magazineCoverMotion 1.2s cubic-bezier(.22,.61,.36,1);
+}
+
+@keyframes magazineCoverMotion {
+    0% {
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+
+    25% {
+        transform: scale(1.035) rotate(-1.2deg);
+        filter: brightness(1.08);
+    }
+
+    50% {
+        transform: scale(1.06) rotate(1deg);
+        filter: brightness(1.15);
+    }
+
+    75% {
+        transform: scale(1.025) rotate(-0.5deg);
+        filter: brightness(1.05);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+}
 /* ========================================================= COVER GLOSS ========================================================= */ 
 .cover-gloss { position: absolute; inset: 0; z-index: 20; pointer-events: none; background: linear-gradient( 125deg, rgba(255,255,255,.2), transparent 20%, transparent 70%, rgba(255,255,255,.05) ); mix-blend-mode: screen; } 
 /* ========================================================= COVER CONTENT ========================================================= */ 
@@ -2049,144 +2089,4 @@ p.info {
 .back {
   translate: -100% 0;
   rotate: 0 1 0 180deg;
-}
-
-
-/* =========================================================
-   3D MAGAZINE COVER IMAGE TRANSITION
-   ========================================================= */
-
-/* Cover itself */
-.magazine > .page:first-child .page-front.cover {
-
-    transform-origin: center bottom;
-
-    transform:
-        perspective(1600px)
-        rotateX(72deg)
-        rotateY(0deg)
-        translateY(120px)
-        scaleX(1.18);
-
-    transition:
-        transform 1.4s cubic-bezier(.18,.75,.25,1);
-
-    transform-style: preserve-3d;
-}
-
-
-/* =========================================================
-   WHEN USER CLICKS COVER
-========================================================= */
-
-.magazine.cover-standing
-> .page:first-child
-> .page-front.cover {
-
-    transform:
-        perspective(1600px)
-        rotateX(0deg)
-        rotateY(0deg)
-        translateY(0)
-        scaleX(1);
-
-}
-
-
-/* =========================================================
-   IMAGE
-========================================================= */
-
-.magazine > .page:first-child .cover-image {
-
-    transform:
-        translateZ(1px);
-
-    transition:
-        transform 1.4s cubic-bezier(.18,.75,.25,1);
-
-}
-
-
-/* =========================================================
-   COVER SHADOW
-========================================================= */
-
-.magazine > .page:first-child .cover::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 5%;
-    right: 5%;
-    bottom: -30px;
-
-    height: 35px;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(0,0,0,.65),
-            transparent 70%
-        );
-
-    filter: blur(10px);
-
-    opacity: .8;
-
-    transform:
-        rotateX(90deg)
-        translateZ(-10px);
-
-    pointer-events: none;
-
-}
-
-
-/* =========================================================
-   SMOOTH 3D EDGE
-========================================================= */
-
-.magazine > .page:first-child .cover {
-
-    box-shadow:
-
-        0 30px 45px rgba(0,0,0,.55),
-
-        inset -15px 0 25px rgba(0,0,0,.55),
-
-        inset 5px 0 12px rgba(255,255,255,.12);
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width:700px) {
-
-    .magazine > .page:first-child .page-front.cover {
-
-        transform:
-            perspective(1000px)
-            rotateX(68deg)
-            translateY(90px)
-            scaleX(1.1);
-
-    }
-
-    .magazine.cover-standing
-    > .page:first-child
-    > .page-front.cover {
-
-        transform:
-            perspective(1000px)
-            rotateX(0deg)
-            translateY(0)
-            scaleX(1);
-
-    }
-
 }
