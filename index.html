@@ -353,7 +353,20 @@
 
 </div>
 
-<!----- Magazine ------->
+<!---------------------------- MAGAZINE ------------------------------------->
+
+<!----- ANIMASI COVER ------>
+<div class="stage" id="stage">
+
+    <img src="cover.png" class="cover0 cover-1" id="cover1">
+
+    <img src="cover1.png" class="cover0 cover-2" id="cover2">
+
+    <img src="cover2.png" class="cover0 cover-3" id="cover3">
+
+</div>
+
+		
 <div class="magazine-scene">
 
 <div class="magazine" id="magazine">
@@ -1161,6 +1174,159 @@ document.addEventListener(
 );
 
 </script>
+
+/* ================= ANIMASI COVER ================= */
+<script>
+const stage = document.getElementById("stage");
+
+let image3Timer = null;
+let busy = false;
+
+
+/* =========================================
+   SHOW IMAGE 2
+   ========================================= */
+
+function showImage2() {
+
+    clearTimeout(image3Timer);
+
+    busy = true;
+
+    stage.classList.remove("show-image3");
+    stage.classList.remove("returning");
+
+    stage.classList.add("show-image2");
+
+    /*
+       Slow Image 1 → Image 2
+    */
+
+    setTimeout(() => {
+        busy = false;
+    }, 2400);
+
+
+    /*
+       Image 2 → Image 3 after 5 seconds
+    */
+
+    setTimeout(() => {
+
+    // Remove Image 2
+    stage.classList.remove("show-image2");
+
+    // Immediately show Image 3
+    stage.classList.add("show-image3");
+
+    // Start 5 second timer for Image 3
+    startImage3Timer();
+
+}, 5000);
+}
+
+
+/* =========================================
+   IMAGE 3 → IMAGE 1
+========================================= */
+
+function returnToImage1() {
+
+    clearTimeout(image3Timer);
+
+    busy = true;
+
+    /*
+       Quick hide Image 3
+    */
+
+    stage.classList.remove("show-image3");
+
+    requestAnimationFrame(() => {
+
+        stage.classList.add("returning");
+
+    });
+
+
+    /*
+       Finish quick return
+    */
+
+    setTimeout(() => {
+
+        stage.classList.remove("returning");
+
+        busy = false;
+
+    }, 650);
+}
+
+
+/* =========================================
+   IMAGE 3 AUTO TIMER
+========================================= */
+
+function startImage3Timer() {
+
+    clearTimeout(image3Timer);
+
+    /*
+       If user does NOT click for 5 seconds,
+       automatically return to Image 1.
+    */
+
+    image3Timer = setTimeout(() => {
+
+        returnToImage1();
+
+    }, 5000);
+}
+
+
+/* =========================================
+   CLICK
+========================================= */
+
+stage.addEventListener("click", () => {
+
+    /*
+       Ignore clicks during animation
+    */
+
+    if (busy) return;
+
+
+    /* -------------------------------------
+       IMAGE 1 → IMAGE 2
+    ------------------------------------- */
+
+    if (
+        !stage.classList.contains("show-image2") &&
+        !stage.classList.contains("show-image3") &&
+        !stage.classList.contains("returning")
+    ) {
+
+        showImage2();
+
+        return;
+    }
+
+
+    /* -------------------------------------
+       IMAGE 3 → IMAGE 1
+       IMMEDIATELY IF CLICKED
+    ------------------------------------- */
+
+    if (stage.classList.contains("show-image3")) {
+
+        returnToImage1();
+
+    }
+
+});
+</script>
+
 </body>
 </html>
 
