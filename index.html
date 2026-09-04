@@ -354,17 +354,6 @@
 </div>
 
 <!----- Magazine ------->
-
-<div class="stage" id="stage">
-
-    <img src="cover.png" class="cover0 cover-1" id="cover1">
-
-    <img src="cover1.png" class="cover0 cover-2" id="cover2">
-
-    <img src="majalah.jpg" class="cover0 cover-3" id="cover3">
-
-</div>
-
 <div class="magazine-scene">
 
 <div class="magazine" id="magazine">
@@ -374,14 +363,17 @@
      SHEET 1
      FRONT COVER + INSIDE COVER
 ====================================================== -->
-<div class="stage" id="stage">
-<!-- ================================================= ONE MAGAZINE ONE COVER IMAGE ================================================= -->
 
-    <div class="magazine start-position front-position" id="magazine" > 
-		<!-- FRONT COVER / ONLY IMAGE --> 
-		<div class="page" id="coverPage"> 
-			<div class="page-face page-front"> 
-				<img src="majalah.jpg" class="cover-image" alt="Magazine Cover" >
+<div class="page">
+
+    <!-- FRONT COVER -->
+
+    <div class="page-face page-front cover">
+
+        <img
+            src="majalah-cover.jpg"
+            class="cover-image"
+            alt="Magazine Cover">
 
         <div class="cover-gloss"></div>
 
@@ -405,8 +397,6 @@
                 ">
                     Hasil Karya Charlie
                 </div>
-
-				<div class="page-face page-back"></div>
 
             </div>
 
@@ -972,29 +962,89 @@ $(function() {
   });
 </script>
 
+<script>
 /* =========================================================
    REALISTIC MAGAZINE FLIP
    Same click-to-flip concept, but using the magazine design
    from the lower source.
 ========================================================= */
-<script> 
-document.addEventListener("DOMContentLoaded", () => { const stage = document.getElementById("stage"); const magazine = document.getElementById("magazine"); const coverPage = document.getElementById("coverPage"); if (!stage || !magazine || !coverPage) { return; } /* ===================================================== STATE ===================================================== */ let state = "initial"; let busy = false; let animationTimer = null; 
-/* ===================================================== INITIAL SETUP ===================================================== */ 
-magazine.classList.add("start-position"); magazine.classList.remove("open-position"); 
-function revealCover() { if (busy) { return; } busy = true; state = "revealing"; 
-/* Remove initial tilted state */ 
-magazine.classList.remove("start-position");
-/* Move into front position */ 
-magazine.classList.add("front-position");
-/* Same slow timing concept as the original 2.4 second cover animation. */ 
-animationTimer = setTimeout(() => { busy = false; state = "front"; }, 2400); } 
-function openMagazine() { if (busy) { return; } busy = true; state = "opening"; magazine.classList.remove("front-position"); magazine.classList.add("open-position"); animationTimer = setTimeout(() => { busy = false; state = "open"; }, 2200); } 
-function flipPage() { if (busy) { return; } busy = true; state = "flipping"; coverPage.classList.add("flipped"); animationTimer = setTimeout(() => { busy = false; state = "flipped"; }, 2200); } 
-/* ===================================================== STEP 4 Return the SAME page. ===================================================== */ 
-function closePage() { if (busy) { return; } busy = true; state = "closing"; coverPage.classList.remove("flipped"); animationTimer = setTimeout(() => { busy = false; state = "open"; }, 2200); } 
-/* ===================================================== CLICK HANDLER ===================================================== */ 
-stage.addEventListener("click", (event) => { event.preventDefault(); if (busy) { return; } /* ----------------------------------------------- FIRST CLICK Tilted cover → front cover ----------------------------------------------- */ if (state === "initial") { revealCover(); return; } /* ----------------------------------------------- SECOND CLICK Front cover → magazine position ----------------------------------------------- */ if (state === "front") { openMagazine(); return; } /* ----------------------------------------------- THIRD CLICK Flip the single page ----------------------------------------------- */ if (state === "open") { flipPage(); return; } /* ----------------------------------------------- FOURTH CLICK Flip page back ----------------------------------------------- */ if (state === "flipped") { closePage(); return; } }); /* ===================================================== TRANSITION EVENTS ===================================================== */ coverPage.addEventListener( "transitionstart", () => { coverPage.classList.add("curling"); } ); coverPage.addEventListener( "transitionend", () => { coverPage.classList.remove("curling"); } ); /* ===================================================== CLEANUP ===================================================== */ window.addEventListener("beforeunload", () => { if (animationTimer) { clearTimeout(animationTimer); } }); }); </script>
+document.addEventListener("DOMContentLoaded", () => {
 
+    const magazine = document.getElementById("magazine");
+    if (!magazine) return;
+
+    const pages = [...magazine.querySelectorAll(":scope > .page")];
+
+    let currentPage = 0;
+
+    pages.forEach((page, index) => {
+        page.dataset.index = index;
+        page.style.zIndex = pages.length - index;
+    });
+
+    function updateMagazine() {
+
+        pages.forEach((page, index) => {
+
+            if (index < currentPage) {
+                page.classList.add("flipped");
+                page.style.transform = "rotateY(-180deg)";
+                page.style.zIndex = index + 1;
+            } else {
+                page.classList.remove("flipped");
+                page.style.transform = "rotateY(0deg)";
+                page.style.zIndex = pages.length - index;
+            }
+
+        });
+
+        magazine.classList.toggle(
+            "open-position",
+            currentPage > 0 && currentPage < pages.length
+        );
+
+        magazine.classList.toggle(
+            "front-position",
+            currentPage === 0
+        );
+
+        magazine.classList.toggle(
+            "back-position",
+            currentPage >= pages.length
+        );
+    }
+
+    pages.forEach((page, index) => {
+
+        page.addEventListener("click", (event) => {
+
+            if (event.target.closest("a")) return;
+
+            /* Clicking the visible right/front side turns forward.
+               Clicking a turned/left page turns backward. */
+            if (page.classList.contains("flipped")) {
+                currentPage = Math.max(0, index);
+            } else {
+                currentPage = Math.min(pages.length, index + 1);
+            }
+
+            updateMagazine();
+        });
+
+        page.addEventListener("transitionstart", () => {
+            page.classList.add("curling");
+        });
+
+        page.addEventListener("transitionend", () => {
+            page.classList.remove("curling");
+        });
+    });
+
+    updateMagazine();
+});
+</script>
+
+<script>
 
 /* =========================
    ACTIVE NAV ITEM
@@ -1110,158 +1160,6 @@ document.addEventListener(
     }
 );
 
-</script>
-
-/* ========================================= animation cover ========================================= */  
-<script>
-const stage = document.getElementById("stage");
-
-let image3Timer = null;
-let busy = false;
-
-
-/* =========================================
-   SHOW IMAGE 2
-   ========================================= */
-
-function showImage2() {
-
-    clearTimeout(image3Timer);
-
-    busy = true;
-
-    stage.classList.remove("show-image3");
-    stage.classList.remove("returning");
-
-    stage.classList.add("show-image2");
-
-    /*
-       Slow Image 1 → Image 2
-    */
-
-    setTimeout(() => {
-        busy = false;
-    }, 2400);
-
-
-    /*
-       Image 2 → Image 3 after 5 seconds
-    */
-
-    setTimeout(() => {
-
-    // Remove Image 2
-    stage.classList.remove("show-image2");
-
-    // Immediately show Image 3
-    stage.classList.add("show-image3");
-
-    // Start 5 second timer for Image 3
-    startImage3Timer();
-
-}, 5000);
-}
-
-
-/* =========================================
-   IMAGE 3 → IMAGE 1
-========================================= */
-
-function returnToImage1() {
-
-    clearTimeout(image3Timer);
-
-    busy = true;
-
-    /*
-       Quick hide Image 3
-    */
-
-    stage.classList.remove("show-image3");
-
-    requestAnimationFrame(() => {
-
-        stage.classList.add("returning");
-
-    });
-
-
-    /*
-       Finish quick return
-    */
-
-    setTimeout(() => {
-
-        stage.classList.remove("returning");
-
-        busy = false;
-
-    }, 650);
-}
-
-
-/* =========================================
-   IMAGE 3 AUTO TIMER
-========================================= */
-
-function startImage3Timer() {
-
-    clearTimeout(image3Timer);
-
-    /*
-       If user does NOT click for 5 seconds,
-       automatically return to Image 1.
-    */
-
-    image3Timer = setTimeout(() => {
-
-        returnToImage1();
-
-    }, 5000);
-}
-
-
-/* =========================================
-   CLICK
-========================================= */
-
-stage.addEventListener("click", () => {
-
-    /*
-       Ignore clicks during animation
-    */
-
-    if (busy) return;
-
-
-    /* -------------------------------------
-       IMAGE 1 → IMAGE 2
-    ------------------------------------- */
-
-    if (
-        !stage.classList.contains("show-image2") &&
-        !stage.classList.contains("show-image3") &&
-        !stage.classList.contains("returning")
-    ) {
-
-        showImage2();
-
-        return;
-    }
-
-
-    /* -------------------------------------
-       IMAGE 3 → IMAGE 1
-       IMMEDIATELY IF CLICKED
-    ------------------------------------- */
-
-    if (stage.classList.contains("show-image3")) {
-
-        returnToImage1();
-
-    }
-
-});
 </script>
 </body>
 </html>
