@@ -368,41 +368,78 @@
 
     <!-- FRONT COVER -->
 
-    <div class="page-face page-front cover">
+	<div class="page-face page-front cover magazine-cover-animation">
+
+    <!-- =========================================
+         3 COVER IMAGES
+    ========================================== -->
+
+    <div class="cover-slideshow">
 
         <img
             src="majalah.jpg"
-            class="cover-image"
-            alt="Magazine Cover">
+            class="cover-slide active"
+            alt="Magazine Cover 1">
 
-        <div class="cover-gloss"></div>
+        <img
+            src="cover.png"
+            class="cover-slide"
+            alt="Magazine Cover 2">
 
-        <div class="cover-content">
+        <img
+            src="cover1.png"
+            class="cover-slide"
+            alt="Magazine Cover 3">
 
-            <div class="embossed-title">
-                C
+    </div>
+
+
+    <!-- =========================================
+         3D GLOSS
+    ========================================== -->
+
+    <div class="cover-gloss-animation"></div>
+
+
+    <!-- =========================================
+         ORIGINAL COVER CONTENT
+    ========================================== -->
+
+    <div class="cover-content">
+
+        <div class="embossed-title">
+            C
+        </div>
+
+        <div>
+
+            <div class="cover-headline">
+                Silahkan di Klik
             </div>
 
-            <div>
-
-                <div class="cover-headline">
-                    Silahkan di Klik
-                </div>
-
-                <div style="
-                    margin-top:14px;
-                    color:#ccc;
-                    font-size:10px;
-                    letter-spacing:3px;
-                ">
-                    Hasil Karya Charlie
-                </div>
-
+            <div style="
+                margin-top:14px;
+                color:#ccc;
+                font-size:10px;
+                letter-spacing:3px;
+            ">
+                Hasil Karya Charlie
             </div>
 
         </div>
 
     </div>
+
+
+    <!-- =========================================
+         CLICK INDICATOR
+    ========================================== -->
+
+    <div class="cover-click-hint">
+        CLICK
+    </div>
+
+</div>
 
 
     <!-- INSIDE FRONT COVER -->
@@ -1160,6 +1197,130 @@ document.addEventListener(
     }
 );
 
+</script>
+
+<script>
+	<script>
+/* =========================================================
+   MAGAZINE COVER IMAGE CLICK TRANSITION
+   Does NOT modify the existing page flip system.
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cover =
+        document.querySelector(
+            ".magazine-cover-animation"
+        );
+
+    if (!cover) return;
+
+
+    const slides =
+        [...cover.querySelectorAll(".cover-slide")];
+
+
+    if (!slides.length) return;
+
+
+    let currentSlide = 0;
+
+    let animating = false;
+
+
+    /* =====================================================
+       SHOW SLIDE
+    ===================================================== */
+
+    function showSlide(index) {
+
+        slides.forEach((slide, i) => {
+
+            slide.classList.toggle(
+                "active",
+                i === index
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       CLICK
+    ===================================================== */
+
+    cover.addEventListener("click", (event) => {
+
+        /*
+         * Prevent this click from interfering
+         * with the magazine page flip.
+         */
+        event.stopPropagation();
+
+
+        if (animating) return;
+
+        animating = true;
+
+
+        /* ================================================
+           PLAY 3D PUSH ANIMATION
+        ================================================= */
+
+        cover.classList.remove(
+            "cover-clicked"
+        );
+
+
+        /*
+         * Force browser to restart animation.
+         */
+        void cover.offsetWidth;
+
+
+        cover.classList.add(
+            "cover-clicked"
+        );
+
+
+        /* ================================================
+           NEXT IMAGE
+        ================================================= */
+
+        currentSlide =
+            (currentSlide + 1)
+            % slides.length;
+
+
+        showSlide(currentSlide);
+
+
+        /* ================================================
+           RESET
+        ================================================= */
+
+        setTimeout(() => {
+
+            cover.classList.remove(
+                "cover-clicked"
+            );
+
+            animating = false;
+
+        }, 1200);
+
+    });
+
+
+    /* =====================================================
+       INITIAL
+    ===================================================== */
+
+    showSlide(currentSlide);
+
+});
+</script>
 </script>
 </body>
 </html>
