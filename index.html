@@ -1171,35 +1171,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!cover) return;
 
-    let isMoving = false;
+    let clicked = false;
 
     cover.addEventListener("click", function () {
 
-        if (isMoving) return;
+        if (clicked) return;
 
-        isMoving = true;
+        clicked = true;
 
-        /* Start the slow cover movement */
-        cover.classList.remove("cover-to-majalah");
-
-        /* Restart animation */
-        void cover.offsetWidth;
-
-        cover.classList.add("cover-to-majalah");
+        /* Start movement */
+        cover.classList.add("cover-moving");
 
         /*
-         * Change cover.png -> majalah.jpg
-         * while the image is almost invisible.
+         * Change cover.png to majalah.jpg
+         * in the middle of the slow motion.
          */
         setTimeout(function () {
             cover.src = "majalah.jpg";
-        }, 1320);
-
-        /* Finish */
-        setTimeout(function () {
-            cover.classList.remove("cover-to-majalah");
-            isMoving = false;
-        }, 2400);
+        }, 1250);
 
     });
 
