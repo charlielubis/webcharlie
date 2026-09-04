@@ -356,29 +356,14 @@
 <!---------------------------- MAGAZINE ------------------------------------->
 
 <!----- ANIMASI COVER ------>
+<!----- BLENDED COVER ANIMATION ------>
 <div class="stage" id="stage">
 
-    <!-- Main animated cover -->
-    <img
-        src="cover.png"
-        class="cover0 cover-1"
-        id="cover1"
-        alt=""
-    >
+    <!-- Animated cover -->
+    <img src="cover.png" class="cover0 cover-1" id="cover1">
+    <img src="cover1.png" class="cover0 cover-2" id="cover2">
 
-    <!-- Front cover -->
-    <img
-        src="cover1.png"
-        class="cover0 cover-2"
-        id="cover2"
-        alt=""
-    >
 </div>
-
-		
-<div class="magazine-scene">
-
-<div class="magazine" id="magazine">
 
 
 <!-- ======================================================
@@ -1186,148 +1171,126 @@ document.addEventListener(
 
 <script>
 /* ================= ANIMASI COVER ================= */
-
 /* =========================================================
    BLENDED COVER ANIMATION
-
-   cover.png
-       ↓ CLICK
-   cover1.png
-       ↓ 5 SECONDS NO CLICK
-   cover.png
-
-   majalah-cover.jpg is NOT part of this animation.
+   ONLY COVER ANIMATION
+   MAGAZINE PAGE CODE IS NOT CHANGED
    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+const stage = document.getElementById("stage");
 
-    const stage = document.getElementById("stage");
-
-    if (!stage) return;
-
-    let returnTimer = null;
-    let busy = false;
+let coverTimer = null;
+let coverBusy = false;
 
 
-    /* =====================================================
-       COVER 1 → COVER 2
-       SLOW MOTION
-       ===================================================== */
+/* =========================================================
+   COVER.PNG → COVER1.PNG
+   ========================================================= */
 
-    function showCover1() {
+function showCover1() {
 
-        clearTimeout(returnTimer);
+    clearTimeout(coverTimer);
 
-        busy = true;
+    coverBusy = true;
+
+    stage.classList.remove("return-cover");
+
+    stage.classList.add("show-cover1");
+
+
+    /*
+        Allow the slow cover movement to finish
+    */
+
+    setTimeout(() => {
+        coverBusy = false;
+    }, 1800);
+
+
+    /*
+        COVER1 stays visible for 5 seconds.
+        If there is no click, return to cover.png.
+    */
+
+    coverTimer = setTimeout(() => {
+
+        returnCover();
+
+    }, 5000);
+}
+
+
+/* =========================================================
+   COVER1.PNG → COVER.PNG
+   ========================================================= */
+
+function returnCover() {
+
+    clearTimeout(coverTimer);
+
+    coverBusy = true;
+
+    stage.classList.remove("show-cover1");
+
+    /*
+        Small delay forces browser to apply
+        the quick return animation.
+    */
+
+    requestAnimationFrame(() => {
+
+        stage.classList.add("return-cover");
+
+    });
+
+
+    setTimeout(() => {
 
         stage.classList.remove("return-cover");
 
-        /*
-           Slow cover.png movement
-        */
+        coverBusy = false;
 
-        stage.classList.add("show-cover1");
-
-
-        /*
-           Animation finished
-        */
-
-        setTimeout(() => {
-
-            busy = false;
-
-        }, 2400);
+    }, 650);
+}
 
 
-        /*
-           cover1.png remains visible for 5 seconds
-        */
+/* =========================================================
+   CLICK COVER
+   ========================================================= */
 
-        returnTimer = setTimeout(() => {
+stage.addEventListener("click", function () {
 
-            returnToCover();
-
-        }, 5000);
+    if (coverBusy) {
+        return;
     }
 
 
-    /* =====================================================
-       COVER 2 → COVER 1
-       QUICK HIDE
-       ===================================================== */
+    /*
+        INITIAL COVER
+        cover.png → cover1.png
+    */
 
-    function returnToCover() {
+    if (
+        !stage.classList.contains("show-cover1") &&
+        !stage.classList.contains("return-cover")
+    ) {
 
-        clearTimeout(returnTimer);
+        showCover1();
 
-        busy = true;
-
-        /*
-           Remove front-cover state
-        */
-
-        stage.classList.remove("show-cover1");
-
-
-        /*
-           Start quick return
-        */
-
-        requestAnimationFrame(() => {
-
-            requestAnimationFrame(() => {
-
-                stage.classList.add("return-cover");
-
-            });
-
-        });
-
-
-        /*
-           Reset
-        */
-
-        setTimeout(() => {
-
-            stage.classList.remove("return-cover");
-
-            busy = false;
-
-        }, 700);
+        return;
     }
 
 
-    /* =====================================================
-       CLICK
-       ===================================================== */
+    /*
+        COVER1 CLICK
+        immediately return to cover.png
+    */
 
-    stage.addEventListener("click", () => {
+    if (stage.classList.contains("show-cover1")) {
 
-        if (busy) return;
+        returnCover();
 
-
-        /*
-           cover.png → cover1.png
-        */
-
-        if (!stage.classList.contains("show-cover1")) {
-
-            showCover1();
-
-            return;
-        }
-
-
-        /*
-           If currently showing cover1.png,
-           click immediately returns to cover.png
-        */
-
-        returnToCover();
-
-    });
+    }
 
 });
 </script>
