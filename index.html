@@ -1169,39 +1169,38 @@ document.addEventListener(
    Does NOT modify the existing page flip system.
 ========================================================= */
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const magazine =
-        document.getElementById("magazine");
+    const coverImage = document.querySelector(
+        ".magazine > .page:first-child .cover-image"
+    );
 
-    if (!magazine) return;
+    const coverPage = document.querySelector(
+        ".magazine > .page:first-child"
+    );
 
+    if (!coverImage || !coverPage) return;
 
-    const cover =
-        magazine.querySelector(
-            ".page:first-child .page-front.cover"
-        );
+    coverPage.addEventListener("click", () => {
 
-    if (!cover) return;
+        coverImage.classList.remove("cover-motion");
 
+        /* Restart animation every click */
+        void coverImage.offsetWidth;
 
-    cover.addEventListener("click", function (event) {
+        coverImage.classList.add("cover-motion");
 
-        /*
-         * IMPORTANT:
-         * Prevent the normal magazine page flip.
-         */
-        event.stopPropagation();
-
-
-        magazine.classList.toggle(
-            "cover-standing"
+        coverImage.addEventListener(
+            "animationend",
+            () => {
+                coverImage.classList.remove("cover-motion");
+            },
+            { once: true }
         );
 
     });
 
 });
 </script>
-
 </body>
 </html>
