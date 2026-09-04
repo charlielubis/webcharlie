@@ -1284,11 +1284,11 @@ p.info {
 
     margin: 0;
 
-    font-size: 14px;
+    font-size: 11px;
 
-    line-height: 1.55;
+    line-height: 1;
 
-    text-align: justify;
+    text-align: left;
 
     color: #d8d8d8;
 
