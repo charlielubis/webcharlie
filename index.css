@@ -2090,3 +2090,80 @@ p.info {
   translate: -100% 0;
   rotate: 0 1 0 180deg;
 }
+
+/* =========================================================
+   COVER ONLY - cover.png -> majalah.jpg motion
+   ========================================================= */
+
+.cover-image {
+    transform-origin: center center;
+    will-change: transform, opacity;
+}
+
+/* Slow motion when the cover is clicked */
+.cover-image.cover-to-majalah {
+    animation: coverToMajalah 2.4s ease-in-out forwards;
+}
+
+@keyframes coverToMajalah {
+
+    /* cover.png - original position */
+    0% {
+        transform:
+            perspective(1000px)
+            rotateX(0deg)
+            rotateY(0deg)
+            scale(1);
+        opacity: 1;
+    }
+
+    /* Slowly start lifting */
+    30% {
+        transform:
+            perspective(1000px)
+            rotateX(-12deg)
+            rotateY(0deg)
+            scale(1.025);
+        opacity: 1;
+    }
+
+    /* Turn almost edge-on */
+    50% {
+        transform:
+            perspective(1000px)
+            rotateX(-35deg)
+            rotateY(0deg)
+            scale(1.04);
+        opacity: 0.15;
+    }
+
+    /* Change to majalah.jpg while hidden */
+    55% {
+        transform:
+            perspective(1000px)
+            rotateX(-35deg)
+            rotateY(0deg)
+            scale(1.04);
+        opacity: 0;
+    }
+
+    /* Reveal majalah.jpg */
+    75% {
+        transform:
+            perspective(1000px)
+            rotateX(-15deg)
+            rotateY(0deg)
+            scale(1.025);
+        opacity: 0.8;
+    }
+
+    /* Final upright position */
+    100% {
+        transform:
+            perspective(1000px)
+            rotateX(0deg)
+            rotateY(0deg)
+            scale(1);
+        opacity: 1;
+    }
+}
