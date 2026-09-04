@@ -368,10 +368,10 @@
 
     <!-- FRONT COVER -->
 
-   <div class="page-face page-front cover">
+    <div class="page-face page-front cover">
 
         <img
-            src="cover.png"
+            src="majalah.jpg"
             class="cover-image"
             alt="Magazine Cover">
 
@@ -403,7 +403,6 @@
         </div>
 
     </div>
-
 
 
     <!-- INSIDE FRONT COVER -->
@@ -1161,38 +1160,6 @@ document.addEventListener(
     }
 );
 
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const cover = document.querySelector(".cover-image");
-
-    if (!cover) return;
-
-    let clicked = false;
-
-    cover.addEventListener("click", function () {
-
-        if (clicked) return;
-
-        clicked = true;
-
-        /* Start movement */
-        cover.classList.add("cover-moving");
-
-        /*
-         * Change cover.png to majalah.jpg
-         * in the middle of the slow motion.
-         */
-        setTimeout(function () {
-            cover.src = "majalah.jpg";
-        }, 1250);
-
-    });
-
-});
 </script>
 </body>
 </html>
