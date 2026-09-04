@@ -1446,42 +1446,47 @@ p.info {
     display: none !important;
 }
 
-/* =========================================================
-   BLENDED COVER ANIMATION
-   majalah-cover.jpg is NOT used
+	 /* =========================================================
+   BLEND MAGAZINE COVER INTO ANIMATION
+   DO NOT DISPLAY majalah-cover.jpg AS A SECOND COVER
    ========================================================= */
 
-.stage {
-    position: relative;
+#cover3 {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
 
-    width: 100%;
-    height: 100vh;
-
-    overflow: hidden;
-
-    perspective: 1600px;
-    perspective-origin: 50% 50%;
-
-    cursor: pointer;
-
-    transform-style: preserve-3d;
-
-    pointer-events: auto;
+#cover3 .cover-image,
+#cover3 .cover-gloss,
+#cover3 .cover-content {
+    opacity: 0 !important;
+    visibility: hidden !important;
 }
 
 
 /* =========================================================
-   COVER IMAGES
+   COVER ANIMATION
    ========================================================= */
 
-.cover0 {
-    position: absolute;
+.stage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1600px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
 
+
+/* Common cover */
+.stage .cover0 {
+    position: absolute;
     left: 50%;
     top: 50%;
 
     height: auto;
-
     object-fit: contain;
 
     pointer-events: none;
@@ -1494,12 +1499,12 @@ p.info {
 
 
 /* =========================================================
-   cover.png
-   START POSITION
+   COVER.PNG
+   INITIAL 3D POSITION
    ========================================================= */
 
-.cover-1 {
-    z-index: 20;
+.stage .cover-1 {
+    z-index: 9999;
 
     width: min(80vw, 800px);
 
@@ -1513,23 +1518,19 @@ p.info {
         rotateZ(0deg)
         scale(1);
 
-    /*
-       SLOW REALISTIC MOTION
-    */
-
     transition:
-        transform 2.4s cubic-bezier(.22,.61,.36,1),
+        transform 1.8s cubic-bezier(.22,.61,.36,1),
         opacity .25s ease;
 }
 
 
 /* =========================================================
-   cover1.png
-   FRONT / NORMAL SIZE
+   COVER1.PNG
+   FRONT / NORMAL COVER
    ========================================================= */
 
-.cover-2 {
-    z-index: 21;
+.stage .cover-2 {
+    z-index: 10000;
 
     width: min(55vw, 500px);
 
@@ -1543,23 +1544,16 @@ p.info {
         rotateZ(0deg)
         scale(1);
 
-    /*
-       IMPORTANT:
-       NO TRANSITION
-       Image 2 → Image 3 style instant switching
-    */
-
     transition: none;
 }
 
 
 /* =========================================================
-   CLICK:
-   cover.png → cover1.png
+   CLICK
+   COVER.PNG → COVER1.PNG
    ========================================================= */
 
 .stage.show-cover1 .cover-1 {
-
     opacity: 0;
 
     transform:
@@ -1573,8 +1567,7 @@ p.info {
 
 
 .stage.show-cover1 .cover-2 {
-
-    z-index: 21;
+    z-index: 10001;
 
     opacity: 1;
 
@@ -1589,34 +1582,29 @@ p.info {
 
 
 /* =========================================================
-   AUTOMATIC RETURN:
-   cover1.png → cover.png
-
-   QUICK HIDE
+   RETURN
+   COVER1.PNG → COVER.PNG
    ========================================================= */
 
 .stage.return-cover .cover-2 {
-
     opacity: 0;
 
     transform:
         translate(-50%, -50%)
-        translateY(70px)
+        translateY(100px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
         scale(.88);
 
     transition:
-        opacity .15s ease,
-        transform .25s ease-in;
+        transform .25s ease-in,
+        opacity .18s ease-in;
 }
 
 
-/* =========================================================
-   cover.png RETURNS
-   ========================================================= */
-
 .stage.return-cover .cover-1 {
-
-    z-index: 22;
+    z-index: 10002;
 
     opacity: 1;
 
@@ -1629,8 +1617,8 @@ p.info {
         scale(1);
 
     transition:
-        transform .65s cubic-bezier(.22,.61,.36,1),
-        opacity .15s ease;
+        transform .55s cubic-bezier(.22,.61,.36,1),
+        opacity .18s ease;
 }
 
 
@@ -1640,13 +1628,14 @@ p.info {
 
 @media (max-width: 600px) {
 
-    .cover-1 {
+    .stage .cover-1 {
         width: 90vw;
     }
 
-    .cover-2 {
+    .stage .cover-2 {
         width: min(70vw, 400px);
     }
+
 }
 
 /* REALISTIC 3D MAGAZINE */
@@ -2286,3 +2275,4 @@ p.info {
   translate: -100% 0;
   rotate: 0 1 0 180deg;
 }
+
