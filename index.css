@@ -1587,15 +1587,16 @@ p.info {
 .cover-gloss { position: absolute; inset: 0; z-index: 20; pointer-events: none; background: linear-gradient( 125deg, rgba(255,255,255,.2), transparent 20%, transparent 70%, rgba(255,255,255,.05) ); mix-blend-mode: screen; } 
 /* ========================================================= COVER CONTENT ========================================================= */ 
 .cover-content { 
-    position: absolute; 
-    inset: 0; 
-    z-index: 30; 
-    padding: 32px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    background: transparent;
-}
+	position: absolute; 
+	inset: 0; 
+	z-index: 30; 
+	padding: 32px; 
+	display: flex; 
+	flex-direction: column; 
+	justify-content: space-between; 
+	background: url("majalah.jpg") no-repeat;
+	background-size: 100% 100%;
+	transparent 35%, rgba(0,0,0,.6) ); } 
 /* ========================================================= EMBOSSED TITLE ========================================================= */ 
 .embossed-title { none; } 
 /* ========================================================= COVER HEADLINE ========================================================= */ 
@@ -2049,28 +2050,3 @@ p.info {
   translate: -100% 0;
   rotate: 0 1 0 180deg;
 }
-
-/* =====================================================
-   FRONT COVER IMAGE ONLY
-   ===================================================== */
-
-.magazine > .page:first-child .cover-image {
-    display: block !important;
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    z-index: 1 !important;
-}
-
-.magazine > .page:first-child .cover-content {
-    background: transparent !important;
-    z-index: 30 !important;
-}
-
-.magazine > .page:first-child .cover-gloss {
-    z-index: 20 !important;
-}
-
-
