@@ -1430,7 +1430,553 @@ p.info {
 
 /* News */
 /* REALISTIC 3D MAGAZINE */
- /* ========================================================= CENTER SCENE ========================================================= */ 
+/* ==================================================
+   INTRO COVER
+   First appearance = cover(2).png
+   First click = slow motion to majalah(1).jpg
+   After the transition, the magazine below is enabled.
+   ================================================== */
+
+#intro-stage {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    overflow: hidden;
+    perspective: 1600px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    background: transparent;
+}
+
+#intro-stage .intro-cover {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    transform-origin: center center;
+    will-change: transform, opacity;
+}
+
+#intro-stage .intro-cover-1 {
+    z-index: 3;
+    width: min(80vw, 800px);
+    opacity: 1;
+    transform:
+        translate(-50%, -50%)
+        translateY(130px)
+        rotateX(62deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(1);
+    transition:
+        transform 2.4s cubic-bezier(.22, .61, .36, 1),
+        opacity .5s ease;
+}
+
+#intro-stage .intro-cover-2 {
+    z-index: 2;
+    width: min(55vw, 500px);
+    opacity: 0;
+    transform:
+        translate(-50%, -50%)
+        translateY(100px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(.95);
+    transition: none;
+}
+
+#intro-stage.show-image2 .intro-cover-1 {
+    opacity: 0;
+    transform:
+        translate(-50%, -50%)
+        translateY(300px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(.94);
+}
+
+#intro-stage.show-image2 .intro-cover-2 {
+    z-index: 5;
+    opacity: 1;
+    transform:
+        translate(-50%, -50%)
+        translateY(-1px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        scale(1.1);
+}
+
+/* After the intro finishes, the magazine receives the clicks. */
+body.intro-finished #intro-stage {
+    display: none;
+}
+
+/* Hide the magazine only during the intro. */
+body.intro-active .magazine-scene {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    #intro-stage .intro-cover-1 {
+        width: 90vw;
+    }
+
+    #intro-stage .intro-cover-2 {
+        width: min(70vw, 400px);
+    }
+}
+</style>
+</head>
+
+<body class="intro-active">
+
+<div id="intro-stage">
+    <img src="cover(2).png" class="intro-cover intro-cover-1" id="introCover1" alt="Magazine Cover">
+    <img src="majalah(1).jpg" class="intro-cover intro-cover-2" id="introCover2" alt="Magazine Cover">
+</div>
+
+<!----- Magazine ------->
+<div class="magazine-scene">
+
+<div class="magazine" id="magazine">
+
+
+<!-- ======================================================
+     SHEET 1
+     FRONT COVER + INSIDE COVER
+====================================================== -->
+
+<div class="page">
+
+    <!-- FRONT COVER -->
+
+    <div class="page-face page-front cover">
+
+        <img
+            src="majalah.jpg"
+            class="cover-image"
+            alt="Magazine Cover">
+
+        <div class="cover-gloss"></div>
+
+        <div class="cover-content">
+
+            <div class="embossed-title">
+                C
+            </div>
+
+            <div>
+
+                <div class="cover-headline">
+                    Silahkan di Klik
+                </div>
+
+                <div style="
+                    margin-top:14px;
+                    color:#ccc;
+                    font-size:10px;
+                    letter-spacing:3px;
+                ">
+                    Hasil Karya Charlie
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INSIDE FRONT COVER -->
+
+    <div class="page-face page-back">
+
+        <div class="content">
+
+            <h2>
+                Daftar Isi
+            </h2>
+
+            <p>
+                Berikut ini para Superhero Marvel
+            </p>
+
+            <br>
+
+            <p>1. Captain America</p>
+            <p>2. Iron Man</p>
+            <p>3. Spiderman</p>
+            <p>4. Hulk</p>
+			<p>5. Thor </p>
+            <p>6 Silver Surfer</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     SHEET 2 — PAGE 2 / PAGE 3
+====================================================== -->
+
+<div class="page">
+
+    <div class="page-face page-front">
+
+        <div class="content">
+
+            <h1>Penyergapan</h1>
+
+            <img
+                src="majalah1.jpg"
+                class="page-image"
+                alt="Creative">
+
+            <p>
+                Great design begins with a simple idea.
+                The smallest detail can transform an
+                ordinary experience into something memorable.
+            </p>
+
+            <span class="page-number">02</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-face page-back">
+
+        <div class="content">
+
+            <h1>Pengorbanan</h1>
+
+            <img
+                src="majalah2.jpg"
+                class="page-image"
+                alt="Photography">
+
+            <p>
+                Photography captures emotion,
+                atmosphere and stories in a single frame.
+            </p>
+
+            <span class="page-number">03</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     SHEET 3 — PAGE 4 / PAGE 5
+====================================================== -->
+
+<div class="page">
+
+    <div class="page-face page-front">
+
+        <div class="content">
+
+            <h1>Pertempuran</h1>
+
+            <img
+                src="majalah3.jpg"
+                class="page-image"
+                alt="Architecture">
+
+            <p>
+                Geometry, materials and light combine
+                to create powerful spaces.
+            </p>
+
+            <span class="page-number">04</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-face page-back">
+
+        <div class="content">
+
+            <h1>Pertolongan</h1>
+
+            <img
+                src="majalah4.jpg"
+                class="page-image"
+                alt="Innovation">
+
+            <p>
+                Technology changes the way we create,
+                communicate and experience the world.
+            </p>
+
+            <span class="page-number">05</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     SHEET 4 — PAGE 6 / PAGE 7
+====================================================== -->
+
+<div class="page">
+
+    <div class="page-face page-front">
+
+        <div class="content">
+
+            <h1>Perkelahian</h1>
+
+            <img
+                src="majalah5.jpg"
+                class="page-image"
+                alt="People">
+
+            <p>
+                Behind every creative project are people
+                with unique stories and perspectives.
+            </p>
+
+            <span class="page-number">06</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-face page-back">
+
+        <div class="content">
+
+            <h1>Perubahan</h1>
+
+            <img
+                src="majalah6.jpg"
+                class="page-image"
+                alt="Travel">
+
+            <p>
+                Every journey creates a new story.
+            </p>
+
+            <span class="page-number">07</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     SHEET 5 — PAGE 8 / PAGE 9
+====================================================== -->
+
+<div class="page">
+
+    <div class="page-face page-front">
+
+        <div class="content">
+
+            <h1>Pertarungan</h1>
+
+            <img
+                src="majalah7.jpg"
+                class="page-image"
+                alt="Lifestyle">
+
+            <p>
+                Discover a lifestyle built around creativity,
+                quality and meaningful experiences.
+            </p>
+
+            <span class="page-number">08</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="page-face page-back">
+
+        <div class="content">
+
+            <h1>Pembebasan</h1>
+
+            <img
+                src="majalah8.jpg"
+                class="page-image"
+                alt="Culture">
+
+            <p>
+                Culture connects generations and gives
+                meaning to the places we call home.
+            </p>
+
+            <span class="page-number">09</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     SHEET 6 — PAGE 10 + BACK COVER
+====================================================== -->
+
+<div class="page">
+
+    <!-- PAGE 10 -->
+
+    <div class="page-face page-front">
+
+        <div class="content">
+
+            <h1>Penghadangan</h1>
+
+            <img
+                src="majalah9.jpg"
+                class="page-image"
+                alt="Final">
+
+            <p>
+                Keep exploring.
+                Keep creating.
+                Keep telling your story.
+            </p>
+
+            <span class="page-number">10</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         REAL BACK COVER
+    ================================================== -->
+
+    <div class="page-face page-back back-cover">
+
+        <div class="back-cover-logo">
+            Silahkan di Klik
+        </div>
+
+        <div class="back-cover-info">
+            &copy; Charlie 2026. All rights reserved.
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+</div>
+
+<script>
+/* =========================================================
+   REALISTIC MAGAZINE FLIP
+   Same click-to-flip concept, but using the magazine design
+   from the lower source.
+========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+    const magazine = document.getElementById("magazine");
+    if (!magazine) return;
+
+    const pages = [...magazine.querySelectorAll(":scope > .page")];
+
+    let currentPage = 0;
+
+    pages.forEach((page, index) => {
+        page.dataset.index = index;
+        page.style.zIndex = pages.length - index;
+    });
+
+    function updateMagazine() {
+
+        pages.forEach((page, index) => {
+
+            if (index < currentPage) {
+                page.classList.add("flipped");
+                page.style.transform = "rotateY(-180deg)";
+                page.style.zIndex = index + 1;
+            } else {
+                page.classList.remove("flipped");
+                page.style.transform = "rotateY(0deg)";
+                page.style.zIndex = pages.length - index;
+            }
+
+        });
+
+        magazine.classList.toggle(
+            "open-position",
+            currentPage > 0 && currentPage < pages.length
+        );
+
+        magazine.classList.toggle(
+            "front-position",
+            currentPage === 0
+        );
+
+        magazine.classList.toggle(
+            "back-position",
+            currentPage >= pages.length
+        );
+    }
+
+    pages.forEach((page, index) => {
+
+        page.addEventListener("click", (event) => {
+
+            if (event.target.closest("a")) return;
+
+            /* Clicking the visible right/front side turns forward.
+               Clicking a turned/left page turns backward. */
+            if (page.classList.contains("flipped")) {
+                currentPage = Math.max(0, index);
+            } else {
+                currentPage = Math.min(pages.length, index + 1);
+            }
+
+            updateMagazine();
+        });
+
+        page.addEventListener("transitionstart", () => {
+            page.classList.add("curling");
+        });
+
+        page.addEventListener("transitionend", () => {
+            page.classList.remove("curling");
+        });
+    });
+
+    updateMagazine();
+});
+</script>
+
+<style>
 .magazine-scene {
     position: relative;
     width: 100%;
