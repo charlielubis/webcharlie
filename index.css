@@ -2050,3 +2050,16 @@ p.info {
   translate: -100% 0;
   rotate: 0 1 0 180deg;
 }
+
+	 /* =========================================================
+   UPLOADED IMAGE — FRONT COVER ONLY
+   Does not affect any other magazine page
+========================================================= */
+
+.magazine > .page:first-child .cover-content {
+    background-image: url("cover.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
