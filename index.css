@@ -1587,16 +1587,15 @@ p.info {
 .cover-gloss { position: absolute; inset: 0; z-index: 20; pointer-events: none; background: linear-gradient( 125deg, rgba(255,255,255,.2), transparent 20%, transparent 70%, rgba(255,255,255,.05) ); mix-blend-mode: screen; } 
 /* ========================================================= COVER CONTENT ========================================================= */ 
 .cover-content { 
-	position: absolute; 
-	inset: 0; 
-	z-index: 30; 
-	padding: 32px; 
-	display: flex; 
-	flex-direction: column; 
-	justify-content: space-between; 
-	background: url("majalah.jpg") no-repeat;
-	background-size: 100% 100%;
-	transparent 35%, rgba(0,0,0,.6) ); } 
+    position: absolute; 
+    inset: 0; 
+    z-index: 30; 
+    padding: 32px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    background: transparent;
+}
 /* ========================================================= EMBOSSED TITLE ========================================================= */ 
 .embossed-title { none; } 
 /* ========================================================= COVER HEADLINE ========================================================= */ 
