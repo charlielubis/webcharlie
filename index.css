@@ -1594,7 +1594,6 @@ p.info {
 	display: flex; 
 	flex-direction: column; 
 	justify-content: space-between; 
-	background: url("majalah.jpg") no-repeat;
 	background-size: 100% 100%;
 	transparent 35%, rgba(0,0,0,.6) ); } 
 /* ========================================================= EMBOSSED TITLE ========================================================= */ 
