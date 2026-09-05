@@ -1043,7 +1043,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateMagazine();
 });
 </script>
-
+		
 <script>
 
 /* =========================
@@ -1160,6 +1160,35 @@ document.addEventListener(
     }
 );
 
+</script>
+
+<script>
+/* =========================================================
+   INTRO → MAGAZINE
+   The lower magazine click/flip code is NOT changed.
+   First click: cover(2).png → majalah(1).jpg.
+   When the slow animation completes, the intro disappears.
+   The NEXT click belongs to the original magazine code.
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const introStage = document.getElementById("intro-stage");
+    if (!introStage) return;
+
+    let introBusy = false;
+
+    introStage.addEventListener("click", () => {
+        if (introBusy || introStage.classList.contains("show-image2")) return;
+
+        introBusy = true;
+        introStage.classList.add("show-image2");
+
+        /* Same 2.4 second slow-motion timing as the upper code. */
+        setTimeout(() => {
+            document.body.classList.remove("intro-active");
+            document.body.classList.add("intro-finished");
+        }, 2400);
+    });
+});
 </script>
 </body>
 </html>
