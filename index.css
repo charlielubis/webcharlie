@@ -1446,7 +1446,8 @@ p.info {
     cursor: pointer;
     transform-style: preserve-3d;
     background: transparent;
-	margin-top: 50%;
+	margin-top: 110%;
+	margin-left: -10%
 }
 
 #intro-stage .intro-cover {
