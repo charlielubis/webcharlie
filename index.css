@@ -2051,13 +2051,27 @@ p.info {
   rotate: 0 1 0 180deg;
 }
 
-/* FRONT COVER ONLY */
+/* =====================================================
+   FRONT COVER IMAGE ONLY
+   ===================================================== */
+
 .magazine > .page:first-child .cover-image {
-    content: url("./cover.png");
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 1 !important;
 }
 
 .magazine > .page:first-child .cover-content {
-    background: none;
+    background: transparent !important;
+    z-index: 30 !important;
+}
+
+.magazine > .page:first-child .cover-gloss {
+    z-index: 20 !important;
 }
 
 
