@@ -1594,9 +1594,9 @@ p.info {
 	display: flex; 
 	flex-direction: column; 
 	justify-content: space-between; 
-	background-size: 100% 100%;
 	background: url("majalah.jpg") no-repeat;
-    background-size: 100% 100%;
+	background-size: 100% 100%;
+	transparent 35%, rgba(0,0,0,.6) ); } 
 /* ========================================================= EMBOSSED TITLE ========================================================= */ 
 .embossed-title { none; } 
 /* ========================================================= COVER HEADLINE ========================================================= */ 
