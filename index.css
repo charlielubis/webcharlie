@@ -1454,16 +1454,10 @@ p.info {
     position: absolute;
     left: 50%;
     top: 50%;
-
-    width: min(90vw, 1000px);
-    height: min(70vh, 650px);
-
+    height: 150%;
     object-fit: contain;
-    object-position: center center;
-
     pointer-events: none;
     user-select: none;
-
     transform-origin: center center;
     will-change: transform, opacity;
 }
@@ -1486,16 +1480,15 @@ p.info {
 
 #intro-stage .intro-cover-2 {
     z-index: 2;
+    width: min(30%, 150%);
     opacity: 0;
-
     transform:
-        translate(-50%, -50%)
+        translate(-20%, -60%)
         translateY(400px)
         rotateX(0deg)
         rotateY(0deg)
         rotateZ(0deg)
         scale(.95);
-
     transition: none;
 }
 
@@ -1513,9 +1506,8 @@ p.info {
 #intro-stage.show-image2 .intro-cover-2 {
     z-index: 5;
     opacity: 1;
-
     transform:
-        translate(-50%, -50%)
+        translate(10%, -60%)
         translateY(1px)
         rotateX(0deg)
         rotateY(0deg)
