@@ -1454,8 +1454,6 @@ p.info {
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 150%;
-    object-fit: contain;
     pointer-events: none;
     user-select: none;
     transform-origin: center center;
@@ -1464,11 +1462,12 @@ p.info {
 
 #intro-stage .intro-cover-1 {
     z-index: 3;
-    width: min(30%, 60%);
+    width: 40%;
+	height: 50%;
     opacity: 1;
     transform:
         translate(-50%, -50%)
-        translateY(130px)
+        translateY(1px)
         rotateX(62deg)
         rotateY(0deg)
         rotateZ(0deg)
