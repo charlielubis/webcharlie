@@ -1484,7 +1484,7 @@ p.info {
     opacity: 0;
     transform:
         translate(-20%, -60%)
-        translateY(200px)
+        translateY(400px)
         rotateX(0deg)
         rotateY(0deg)
         rotateZ(0deg)
@@ -1507,7 +1507,7 @@ p.info {
     z-index: 5;
     opacity: 1;
     transform:
-        translate(-20%, -60%)
+        translate(10%, -60%)
         translateY(1px)
         rotateX(0deg)
         rotateY(0deg)
