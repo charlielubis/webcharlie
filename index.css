@@ -1507,8 +1507,8 @@ p.info {
     z-index: 5;
     opacity: 1;
     transform:
-        translate(-50%, -50%)
-        translateY(-1px)
+        translate(-20%, -60%)
+        translateY(-5px)
         rotateX(0deg)
         rotateY(0deg)
         rotateZ(0deg)
