@@ -1494,8 +1494,8 @@ p.info {
 
 #intro-stage.show-image2 .intro-cover-1 {
     opacity: 0;
-	width: 50%;
-	height: 80%;
+	width: 80%;
+	height: 50%;
     transform:
         translate(-50%, -50%)
         translateY(300px)
@@ -1508,6 +1508,8 @@ p.info {
 #intro-stage.show-image2 .intro-cover-2 {
     z-index: 5;
     opacity: 1;
+	width: 30%;
+	height: 60%;
     transform:
         translate(-50%, -50%)
         translateY(-1px)
