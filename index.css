@@ -1483,7 +1483,7 @@ p.info {
     width: min(30%, 150%);
     opacity: 0;
     transform:
-        translate(-50%, -50%)
+        translate(-20%, -60%)
         translateY(200px)
         rotateX(0deg)
         rotateY(0deg)
@@ -1508,7 +1508,7 @@ p.info {
     opacity: 1;
     transform:
         translate(-20%, -60%)
-        translateY(-5px)
+        translateY(1px)
         rotateX(0deg)
         rotateY(0deg)
         rotateZ(0deg)
