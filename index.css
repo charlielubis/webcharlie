@@ -1487,7 +1487,6 @@ p.info {
 #intro-stage .intro-cover-2 {
     z-index: 2;
     opacity: 0;
-	position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;  
 
     transform:
         translate(-50%, -50%)
