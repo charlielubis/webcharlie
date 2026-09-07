@@ -1500,7 +1500,7 @@ p.info {
         rotateX(0deg)
         rotateY(0deg)
         rotateZ(0deg)
-        scale(.94);
+        scale(1);
 }
 
 #intro-stage.show-image2 .intro-cover-2 {
@@ -1512,7 +1512,7 @@ p.info {
         rotateX(0deg)
         rotateY(0deg)
         rotateZ(0deg)
-        scale(1.1);
+        scale(1);
 }
 
 /* After the intro finishes, the magazine receives the clicks. */
